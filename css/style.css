@@ -124,6 +124,7 @@ nav ul li {
     position: relative;
     margin: 0 15px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 nav ul li a::after {

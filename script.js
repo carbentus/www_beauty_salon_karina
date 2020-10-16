@@ -1,5 +1,6 @@
 // scroll
-$('nav a').on('click', function () {
+$('nav a').on('click', function (ev) {
+    ev.preventDefault();
     const goToSection = "[data-section=" + $(this).attr('class') + "]";
     $('body, html').animate({
         scrollTop: $(goToSection).offset().top - 85
@@ -29,7 +30,7 @@ $('.book-a-visit').on('click', function(){
 
     $('body, html').animate({
         scrollTop: $('[data-section="menu-contact"]').offset().top - 85
-    }, 1000)
+    }, 600)
 })
 
 
