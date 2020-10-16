@@ -4,9 +4,9 @@ font-family: 'Playfair Display', serif;
 */
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
@@ -14,14 +14,14 @@ body {
 }
 
 html {
-    font-size: 10px;
     font-family: 'Lato', sans-serif;
+    font-size: 10px;
 }
 
 h1 {
-    font-size: 4.3rem;
     color: #fff;
     font-family: 'Playfair Display', serif;
+    font-size: 4.3rem;
 }
 
 p {
@@ -35,26 +35,25 @@ body {
 }
 
 
-
 /* HEADER */
 
 div.header-fixed {
-    width: 100%;
-    height: 85px;
     background-color: white;
+    box-shadow: 0px -2px 5px 0px rgb(146, 144, 144);
+    height: 85px;
+    left: 0;
     position: fixed;
     top: 0;
-    left: 0;
-    box-shadow: 0px -2px 5px 0px rgb(146, 144, 144);
+    width: 100%;
     z-index: 2;
 }
 
 header {
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
     /* width: 100%; */
     max-width: 1280px;
-    margin: 0 auto;
 
 }
 
@@ -72,11 +71,11 @@ header {
 }
 
 .logoContainer .logoText {
-    line-height: 24px;
     font-family: 'Playfair Display', serif;
-    font-weight: bold;
     font-size: 2.8rem;
+    font-weight: bold;
     letter-spacing: 4.38px;
+    line-height: 24px;
     text-align: justify;
 }
 
@@ -99,42 +98,42 @@ a {
 }
 
 nav {
-    display: flex;
     border: 2px solod blue;
+    display: flex;
     padding: 28px 0;
 }
 
 nav ul {
-    display: flex;
     align-content: flex-end;
+    display: flex;
     list-style: none;
 }
 
 
 nav li a {
-    display: block;
-    margin-bottom: 4px;
     color: black;
+    display: block;
+    font-size: 1.7rem;
     font-weight: 500px;
     line-height: 25px;
-    font-size: 1.7rem;
+    margin-bottom: 4px;
 }
 
 nav ul li {
-    position: relative;
     margin: 0 15px;
     overflow: hidden;
+    position: relative;
 }
 
 nav ul li a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
     background-color: #B89288;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: -100%;
+    position: absolute;
     transition: 0.3s ease;
+    width: 100%;
     z-index: -2;
 }
 
@@ -179,34 +178,34 @@ a:hover::after {
 
 /* HERO */
 section.hero {
-    height: 671px;
-    margin-top: 80px;
+    background-attachment: fixed;
     background-image: url("../images/header_1600.jpg");
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    height: 671px;
+    margin-top: 80px;
     overflow: hidden;
 }
 
 .hero-text-containter {
-    width: 1280px;
     margin: 0 auto;
     padding-top: 8%;
+    width: 1280px;
 }
 
 
 h1.hero-title {
-    margin-bottom: 24px;
     letter-spacing: 2px;
+    margin-bottom: 24px;
     width: 500px;
 }
 
 p.hero-text-small {
-    font-size: 2rem;
     color: #fff;
-    width: 500px;
+    font-size: 2rem;
     line-height: 3rem;
+    width: 500px;
 }
 
 button {
@@ -214,16 +213,16 @@ button {
 }
 
 .hero button.book-a-visit {
-    margin: 32px 0;
+    background-color: #B89288;
     border: none;
     border-radius: 3px;
-    background-color: #B89288;
+    color: #fff;
+    cursor: pointer;
     font-size: 1.6rem;
     font-weight: bold;
-    color: #fff;
     letter-spacing: 1.5px;
+    margin: 32px 0;
     text-transform: uppercase;
-    cursor: pointer;
     transition: .6s;
 }
 
@@ -235,8 +234,8 @@ button {
 
 @media (max-width: 1280px) {
     section.hero {
-        height: 537px;
         background-image: url("../images/header_1280.jpg");
+        height: 537px;
     }
 
     h1 {
@@ -256,8 +255,8 @@ button {
 
 @media (orientation: portrait) and (max-width: 1024px) {
     section.hero {
-        height: 484px;
         background-image: url("../images/header_1024a.jpg");
+        height: 484px;
     }
 }
 
@@ -267,9 +266,9 @@ button {
 .service {
     display: flex;
     justify-content: flex-start;
-    max-width: 1280px;
-    margin: 0 auto;
     justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1280px;
     padding: 72px 0;
     transition: 1.2s ease-out;
 }
@@ -286,20 +285,20 @@ section.service-bcg div.service {
 /* ANIMACJA  Start - wjazd elementów */
 .services .service.waxing,
 .services .service.manicure {
-    transform: translateX(110vw);
     opacity: 0;
+    transform: translateX(110vw);
 }
 
 .services .service.face {
-    transform: translateX(-110vw);
     opacity: 0;
+    transform: translateX(-110vw);
 }
 
 .services .service.waxing.active,
 .services .service.manicure.active,
 .services .service.face.active {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
 }
 
 /* animacja END */
@@ -319,11 +318,11 @@ section.service-bcg div.service {
 }
 
 h2 {
-    height: 30px;
     color: #444;
     font-family: "Playfair Display", sans-serif;
     font-size: 2.4rem;
     font-weight: bold;
+    height: 30px;
     line-height: 30px;
     margin-bottom: 20px;
 }
@@ -347,9 +346,9 @@ h2 {
     }
 
     .service-about p {
+        color: red;
         font-size: 1.4rem;
         height: 120px;
-        color: red;
     }
 }
 
@@ -366,8 +365,8 @@ h2 {
 
 @media (max-width: 1024px) {
     .service {
-        flex-direction: column;
         align-items: center;
+        flex-direction: column;
         padding: 44px 0;
     }
 
@@ -397,32 +396,32 @@ h2 {
 
 /* PRICING */
 section.pricing {
+    color: #444;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 72px auto;
     width: 1280px;
-    color: #444;
 }
 
 
 .h2-price-contact {
-    position: relative;
+    letter-spacing: 1.51px;
     margin-bottom: 24px;
     padding-bottom: 55px;
-    width: 100%;
+    position: relative;
     text-align: center;
-    letter-spacing: 1.51px;
+    width: 100%;
     z-index: -2;
 }
 
 .h2-price-contact span {
-    position: absolute;
-    width: 4.75%;
-    height: 1px;
     background-color: #000;
     bottom: 1px;
+    height: 1px;
     left: 47.8%;
+    position: absolute;
+    width: 4.75%;
 }
 
 
@@ -433,25 +432,25 @@ section.pricing {
 
 .pricing-categories div {
     border-bottom: 1px solid rgb(240, 240, 240);
-    padding: 16px 0;
     cursor: pointer;
+    padding: 16px 0;
 }
 
 
 .pricing h3 {
-    position: relative;
-    font-weight: bold;
     font-size: 2rem;
+    font-weight: bold;
     line-height: 36px;
+    position: relative;
     z-index: -2;
 }
 
 .pricing h3 i {
-    position: absolute;
-    left: -28px;
-    top: 3px;
-    font-size: 3.2rem;
     display: none;
+    font-size: 3.2rem;
+    left: -28px;
+    position: absolute;
+    top: 3px;
 }
 
 .pricing-categories>div.active h3 {
@@ -473,12 +472,12 @@ section.pricing {
 }
 
 .pricing-list-container {
-    width: 54%;
-    min-height: auto;
-    padding: 36px;
     box-shadow: 0px 1px 2px 0px rgba(160, 160, 160, 1);
     font-size: 2rem;
     line-height: 20px;
+    min-height: auto;
+    padding: 36px;
+    width: 54%;
 }
 
 .pricing-list-items {
@@ -496,8 +495,8 @@ div.pricing-list-item:nth-child(1) {
 
 div.pricing-list-item {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-between;
     margin-top: 32px;
 }
 
@@ -506,20 +505,20 @@ h4.item-name {
 }
 
 .item-line-spacer {
+    border-bottom: 1px solid rgb(240, 240, 240);
     flex-grow: 1;
     margin: 0 10px;
-    border-bottom: 1px solid rgb(240, 240, 240);
 }
 
 p.item-price {
-    font-size: 2rem;
     /* background-color: lightyellow; */
     color: #B89288;
+    font-size: 2rem;
 }
 
 p.item-description {
-    font-size: 1.6rem;
     flex-basis: 100%;
+    font-size: 1.6rem;
     margin-top: 8px;
 }
 
@@ -553,8 +552,8 @@ p.item-description {
 
 /* CONTACT - start */
 section.contact {
-    width: 1280px;
     margin: 0 auto;
+    width: 1280px;
 }
 
 @media (max-width: 1440px) {
@@ -570,10 +569,10 @@ iframe.contact-map {
 }
 
 iframe.contact-map.active {
-    transform: scale(1);
-    width: 100%;
     height: 370px;
     margin: 0 auto 40px auto;
+    transform: scale(1);
+    width: 100%;
 }
 
 .contact-text-wrapper {
@@ -587,28 +586,28 @@ iframe.contact-map.active {
 }
 
 .contact-text {
-    width: 50%;
     color: #444;
-    padding-right: 85px;
     font-size: 1.8px;
     letter-spacing: 1.1px;
     line-height: 26px;
+    padding-right: 85px;
+    width: 50%;
 }
 
 .contact-text h3 {
-    margin: 20px 0;
     font-size: 2.2rem;
     font-weight: bold;
     letter-spacing: 1.51px;
     line-height: 33px;
+    margin: 20px 0;
 }
 
 .contact-text i {
-    margin-right: 10px;
-    font-size: 2.2rem;
     color: #B89288;
-    vertical-align: -4px;
+    font-size: 2.2rem;
     line-height: 25px;
+    margin-right: 10px;
+    vertical-align: -4px;
 }
 
 .contact-text-wrapper p {
@@ -623,59 +622,59 @@ iframe.contact-map.active {
 
 
 .contact-form p {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 6px;
-    margin-top: 20px;
     color: #444444;
+    display: inline-block;
     font-family: "Lato";
     font-weight: 400;
     letter-spacing: 1.51px;
     line-height: 25px;
+    margin-bottom: 6px;
+    margin-top: 20px;
+    width: 100%;
 }
 
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    height: 35px;
-    padding: 0 14px;
+    background-color: #FFFFFF;
     border: 1px solid #F0F2F6;
     border-radius: 2px;
-    background-color: #FFFFFF;
-    outline: none;
     font-family: "Lato";
     font-size: 1.6rem;
+    height: 35px;
     letter-spacing: .5px;
+    outline: none;
+    padding: 0 14px;
+    width: 100%;
 
 }
 
 .contact-form textarea {
-    resize: vertical;
-    max-height: 400px;
-    height: 153px;
-    padding-top: 9px;
-    padding-bottom: 9px;
     color: #444;
+    height: 153px;
+    max-height: 400px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    resize: vertical;
 }
 
 /* .contact-form button.send */
 .contact-form input.send {
-    width: auto;
-    height: auto;
-    margin: 16px 0;
-    padding: 16px 24px;
-    border-radius: 3px;
     background-color: #B89288;
+    border-radius: 3px;
     border-style: none;
     color: #FFFFFF;
+    cursor: pointer;
     font-family: Lato;
     font-size: 1.6rem;
     font-weight: bold;
+    height: auto;
     letter-spacing: 1.1px;
+    margin: 16px 0;
+    padding: 16px 24px;
     text-transform: uppercase;
-    cursor: pointer;
     transition: .4s;
+    width: auto;
 }
 
 button.book-a-visit:hover,
@@ -705,15 +704,15 @@ textarea:focus {
 
 @media (max-width: 1024px) {
     .contact-text-wrapper {
-        flex-direction: column;
         align-items: center;
+        flex-direction: column;
     }
 
     .contact-text,
     .contact-form {
         display: flex;
-        width: 100%;
         padding-right: 0;
+        width: 100%;
     }
 
     form {
@@ -721,13 +720,13 @@ textarea:focus {
     }
 
     .contact-text-wrapper.mobile {
-        display: flex;
         align-items: flex-start;
+        display: flex;
     }
 
     .contact-text-wrapper.mobile {
-        width: 60%;
         margin-bottom: 40px;
+        width: 60%;
     }
 
     .contact-icons-wrapper.mobile {
@@ -748,19 +747,19 @@ textarea:focus {
 
 /* FOOTER */
 footer {
-    margin-top: 72px;
-    height: 8vh;
     background-color: #221E1F;
+    height: 8vh;
+    margin-top: 72px;
 }
 
 footer p {
+    color: white;
     display: block;
-    margin: 0 auto;
-    width: 1280px;
     font-size: 15px;
     letter-spacing: 1px;
     line-height: 8vh;
-    color: white;
+    margin: 0 auto;
+    width: 1280px;
 }
 
 @media (max-width: 1440px) {
@@ -773,3 +772,4 @@ footer p {
     footer p {
         font-size: 12px;
     }
+}

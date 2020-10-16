@@ -1,11 +1,15 @@
-// scroll
-$('nav a').on('click', function () {
-    const goToSection = "[data-section=" + $(this).attr('class') + "]";
-    $('body, html').animate({
-        scrollTop: $(goToSection).offset().top - 85
-    }, 1000)
-})
+let throttleTimeout = 0;
 
+// scroll
+$('nav a').on('click', function (ev) {
+    clearTimeout(throttleTimeout);
+    throttleTimeout = setTimeout(() => {
+        const goToSection = "[data-section=" + $(this).attr('class') + "]";
+        $('body, html').animate({
+            scrollTop: $(goToSection).offset().top - 85
+        }, 1000)
+    }, 100);
+})
 
 // Price-list display
 
@@ -35,46 +39,62 @@ $('.book-a-visit').on('click', function(){
 
 // Animation, scroll
 
+
+
+
+const $serviceWaxing = $('.services .service.waxing');
+const $serviceFace = $('.services .service.face');
+const $serviceManicure = $('.services .service.manicure');
+const $serviceContactMap = $('.contact-map');
+
+let windowHeight;
+let serviceWaxingFromTop;
+let serviceWaxingHeight;
+let serviceFaceFromTop;
+let serviceFaceHeight;
+let serviceManicureFromTop;
+let serviceManicureHeight;
+let serviceContactMapFromTop;
+let serviceContactMapHeight;
+
+const onResize = function onDocumentResize() {
+    console.log('resize');
+    windowHeight = $(window).height();
+    serviceWaxingFromTop = $serviceWaxing.offset().top;
+    serviceWaxingHeight = $serviceWaxing.outerHeight();
+    serviceFaceFromTop = $serviceFace.offset().top;
+    serviceFaceHeight = $serviceFace.outerHeight();
+    serviceManicureFromTop = $serviceManicure.offset().top;
+    serviceManicureHeight = $serviceManicure.outerHeight();
+    serviceContactMapFromTop = $serviceContactMap.offset().top;
+    serviceContactMapHeight = $serviceContactMap.outerHeight();
+};
+
+onResize();
+$(window).resize(onResize);
+
 $(document).on('scroll', function(){
-    const windowHeight = $(window).height();
+    console.log('scroll');
     const scrollValue = $(this).scrollTop();
 
-    const $serviceWaxing = $('.services .service.waxing');
-    const serviceWaxingFromTop = $serviceWaxing.offset().top;
-    const serviceWaxingHeight = $serviceWaxing.outerHeight();
+    if(scrollValue > serviceWaxingFromTop+(serviceWaxingHeight/2)-windowHeight){
+        $serviceWaxing.addClass('active'); 
+    }
 
-    const $serviceFace = $('.services .service.face');
-    const serviceFaceFromTop = $serviceFace.offset().top;
-    const serviceFaceHeight = $serviceFace.outerHeight();
+    if(scrollValue > serviceFaceFromTop+(serviceFaceHeight/2)-windowHeight){
+        $serviceFace.addClass('active'); 
+    }
 
-    const $serviceManicure = $('.services .service.manicure');
-    const serviceManicureFromTop = $serviceManicure.offset().top;
-    const serviceManicureHeight = $serviceManicure.outerHeight();
-
-    const $serviceContactMap = $('.contact-map');
-    const serviceContactMapFromTop = $serviceContactMap.offset().top;
-    const serviceContactMapHeight = $serviceContactMap.outerHeight();
-
-  
-if(scrollValue > serviceWaxingFromTop+(serviceWaxingHeight/2)-windowHeight){
-    $serviceWaxing.addClass('active'); 
-}
-
-if(scrollValue > serviceFaceFromTop+(serviceFaceHeight/2)-windowHeight){
-      $serviceFace.addClass('active'); 
-}
-
-if(scrollValue > serviceManicureFromTop+(serviceManicureHeight/2)-windowHeight){
-    $serviceManicure.addClass('active'); 
-}
-  
-if(scrollValue > serviceContactMapFromTop+(serviceContactMapHeight/2) - windowHeight){
-    $serviceContactMap.addClass('active'); 
-}
-// Clear 
-if(scrollValue < 100){
-    $('.services .service, .contact-map').removeClass('active');
-}
-
+    if(scrollValue > serviceManicureFromTop+(serviceManicureHeight/2)-windowHeight){
+        $serviceManicure.addClass('active'); 
+    }
+    
+    if(scrollValue > serviceContactMapFromTop+(serviceContactMapHeight/2) - windowHeight){
+        $serviceContactMap.addClass('active'); 
+    }
+    // Clear 
+    if(scrollValue < 100){
+        $('.services .service, .contact-map').removeClass('active');
+    }
 })
 
