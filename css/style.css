@@ -28,12 +28,17 @@ p {
     font-size: 1.6rem;
 }
 
-
 body {
     margin: 0 auto;
     position: relative;
 }
 
+
+@media (max-width: 1024px) {
+p {
+    font-size: 1.4rem;
+}
+}
 
 /* HEADER */
 
@@ -146,10 +151,7 @@ a:hover::after {
     header {
         max-width: 90%;
     }
-
-
 }
-
 
 @media (max-width: 1280px) {
     nav li a {
@@ -172,7 +174,6 @@ a:hover::after {
         font-size: 1.2rem;
         word-spacing: 2.3px;
     }
-
 }
 
 
@@ -303,8 +304,6 @@ section.service-bcg div.service {
 
 /* animacja END */
 
-
-
 .service-about {
     display: flex;
     flex-direction: column;
@@ -315,6 +314,14 @@ section.service-bcg div.service {
 .service-picture img {
     box-shadow: 0px 1px 2px 0px rgba(160, 160, 160, 1);
     width: 640px;
+}
+.service-picture.massage img,
+.service-picture.face img {
+    margin-left: 40px;
+}
+.service-picture.waxing img,
+.service-picture.manicure img {
+    margin-right: 40px;
 }
 
 h2 {
@@ -342,25 +349,37 @@ h2 {
 
 @media (max-width: 1280px) {
     .service-picture img {
-        width: 200px;
+       width: 500px;
+ 
     }
+
+    h2 {
+           font-size: 2rem;
+          }
+    
 
     .service-about p {
         color: red;
         font-size: 1.4rem;
-        height: 120px;
-    }
+           }
 }
 
 
 @media (max-width: 1112px) {
     .service-picture img {
         width: 450px;
+  
     }
 
     .service-about {
         width: 450px;
     }
+
+ 
+    .service-about p {
+        color: blue;
+        font-size: 1.3rem;
+           }
 }
 
 @media (max-width: 1024px) {
@@ -372,7 +391,7 @@ h2 {
 
     .service-about {
         height: auto;
-        margin-bottom: 74px;
+        margin-bottom: 60px;
     }
 
     section.service-bcg div.service {
@@ -384,6 +403,7 @@ h2 {
     }
 
     .service-about p {
+        color: pink;
         height: auto;
         text-align: center;
     }
@@ -391,15 +411,21 @@ h2 {
     .service-picture img {
         width: 600px;
     }
+
+.service-picture.massage img,
+.service-picture.face img, 
+.service-picture.waxing img,
+.service-picture.manicure img {
+    margin: 0;
+}
+
 }
 
 
 /* PRICING */
 section.pricing {
     color: #444;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    
     margin: 72px auto;
     width: 1280px;
 }
@@ -424,6 +450,11 @@ section.pricing {
     width: 4.75%;
 }
 
+.menu-pricing-standard.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 .pricing-categories {
     height: 500px;
@@ -434,14 +465,20 @@ section.pricing {
     border-bottom: 1px solid rgb(240, 240, 240);
     cursor: pointer;
     padding: 16px 0;
+
+    /* border:2px solid red; */
 }
 
+.pricing-categories div:nth-last-child(1){
+    border-bottom: none;
+  }
 
 .pricing h3 {
     font-size: 2rem;
     font-weight: bold;
     line-height: 36px;
     position: relative;
+    padding-bottom: 12px;;
     z-index: -2;
 }
 
@@ -472,12 +509,14 @@ section.pricing {
 }
 
 .pricing-list-container {
-    box-shadow: 0px 1px 2px 0px rgba(160, 160, 160, 1);
     font-size: 2rem;
     line-height: 20px;
     min-height: auto;
     padding: 36px;
     width: 54%;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.24);
+    border-radius: 2px;
+
 }
 
 .pricing-list-items {
@@ -500,18 +539,14 @@ div.pricing-list-item {
     margin-top: 32px;
 }
 
-h4.item-name {
-    /* background-color: lightsteelblue; */
-}
 
 .item-line-spacer {
-    border-bottom: 1px solid rgb(240, 240, 240);
+    border-bottom: .5px solid #F7F7F7;
     flex-grow: 1;
     margin: 0 10px;
 }
 
 p.item-price {
-    /* background-color: lightyellow; */
     color: #B89288;
     font-size: 2rem;
 }
@@ -522,34 +557,118 @@ p.item-description {
     margin-top: 8px;
 }
 
-
-
-
 @media (max-width: 1440px) {
     section.pricing {
         width: 90%;
     }
 }
+@media(max-width: 1024px){
+     .pricing-list-container{
+        font-size: 1.8rem;
+    }
 
-
-
-
-/* @media (max-width: 1100px) {
     .pricing h3 {
         font-size: 1.8rem;
     }
 
-    .pricing-categories {
-        margin-right: 5%;
+    p.item-price {
+        font-size: 1.8rem;
     }
+    
 
-    .pricing-list-container {
+    p.item-description{
         font-size: 1.4rem;
     }
-} */
+
+}
+
+
+
+
+/* Pricelist - ACCORDION  start */
+
+.menu-pricing-accordion.wrapper{
+    /* border: 2px solid blue; */
+    display:none;
+}
+.menu-pricing-accordion-categorie{
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    color: #B89288;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgb(240, 240, 240);
+    transition: .4s;
+    overflow: hidden;
+ padding: 16px 32px 16px 37px;
+  }
+
+  .menu-pricing-accordion-categorie.active{
+    background-color: yellow;
+  }
+
+button.menu-pricing-accordion-categorie h3 {
+    z-index: 0;
+    font-family: 'Lato', sans-serif;
+    float: left;
+    padding:0;
+}
+
+span.arrow {
+    font-size: 25px;
+    line-height: 30px;;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #B89288;
+    border-radius: 50%;
+    float:right;
+
+}
+
+
+span.arrow.active {
+transform: rotate(180deg);
+}
+.accordion-pricing-list-items{
+    background-color: #F7F7F7;
+    border-left: 5px solid #B89288;
+    /* display: flex; */
+    display: none;
+    flex-wrap: wrap;
+    padding: 16px 32px 16px 32px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease-out;
+}
+
+.accordion-pricing-list-item{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   flex-basis:100%;
+   margin: 16px 0;
+}
+.accordion-pricing-list-item .item-name{
+    font-size: 1.8rem;
+}
+
+
+@media (max-width: 980px) {
+    .menu-pricing-standard.wrapper {
+        display: none;
+    }
+
+    .menu-pricing-accordion.wrapper {
+        display: block;
+    }
+}
+
+
+/* PRICELIST - ACCORDION  end */
 
 /* PRICELIST - END */
-
 /* CONTACT - start */
 section.contact {
     margin: 0 auto;
@@ -740,7 +859,6 @@ textarea:focus {
 
     }
 }
-
 /* CONTACT FORM - end */
 /* CONTACT - end */
 

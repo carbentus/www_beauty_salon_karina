@@ -1,6 +1,6 @@
-let throttleTimeout = 0;
+// ----------- Click on NAV --> SCROLL  to section  -- JQ --
 
-// scroll
+let throttleTimeout = 0;
 $('nav a').on('click', function (ev) {
     ev.preventDefault();
     clearTimeout(throttleTimeout);
@@ -12,7 +12,9 @@ $('nav a').on('click', function (ev) {
     }, 100);
 })
 
-// Price-list display
+
+
+// ----------- Pricelist display
 
 $(".pricing-categories>div").on('click', function(){
 if ($(this).hasClass('active')){
@@ -22,8 +24,11 @@ else{
     $('.pricing-list-items').removeClass('active')
     
     activeCategoryClass = this.className
+    console.log(this.className);
     $(this).addClass('active')
      $('.pricing-list-items.' + activeCategoryClass).addClass('active')
+
+
     }
 })
 
@@ -39,9 +44,6 @@ $('.book-a-visit').on('click', function(){
 
 
 // Animation, scroll
-
-
-
 
 const $serviceWaxing = $('.services .service.waxing');
 const $serviceFace = $('.services .service.face');
@@ -78,24 +80,57 @@ $(document).on('scroll', function(){
     console.log('scroll');
     const scrollValue = $(this).scrollTop();
 
-    if(scrollValue > serviceWaxingFromTop+(serviceWaxingHeight/2)-windowHeight){
+    if(scrollValue > serviceWaxingFromTop+(serviceWaxingHeight/3)-windowHeight){
         $serviceWaxing.addClass('active'); 
     }
 
-    if(scrollValue > serviceFaceFromTop+(serviceFaceHeight/2)-windowHeight){
+    if(scrollValue > serviceFaceFromTop+(serviceFaceHeight/3)-windowHeight){
         $serviceFace.addClass('active'); 
     }
 
-    if(scrollValue > serviceManicureFromTop+(serviceManicureHeight/2)-windowHeight){
+    if(scrollValue > serviceManicureFromTop+(serviceManicureHeight/3)-windowHeight){
         $serviceManicure.addClass('active'); 
     }
     
     if(scrollValue > serviceContactMapFromTop+(serviceContactMapHeight/2) - windowHeight){
         $serviceContactMap.addClass('active'); 
     }
-    // Clear 
-    if(scrollValue < 100){
-        $('.services .service, .contact-map').removeClass('active');
-    }
 })
 
+// ACCORDION 
+
+// acc=button
+var acc = document.getElementsByClassName("menu-pricing-accordion-categorie");
+var panels = document.getElementsByClassName("accordion-pricing-list-items");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener('click', function() {
+
+    // for (i=0; i< panels.length; i++){
+    //       if (acc != this) {
+    //         panels[i].style.maxHeight = null;
+    //         panels[i].style.display= "none";
+    //         panels[i].previousElementSibling.classList.remove("active");
+    //          }
+    // }
+   
+    this.classList.toggle("active");
+    
+    var arr = this.lastChild;
+    arr.classList.toggle("active");
+
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "flex") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "flex";
+    }
+
+    if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+  });
+}
