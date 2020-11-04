@@ -18,6 +18,25 @@ html {
     font-size: 10px;
 }
 
+@media (max-width: 1280px) {
+    html {
+        font-size: 9.5px;
+    }
+}
+
+@media (max-width: 1112px) {
+    html {
+        font-size: 9px;
+    }   
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 8.5px;
+    }   
+}
+
+
 h1 {
     color: #fff;
     font-family: 'Playfair Display', serif;
@@ -34,11 +53,8 @@ body {
 }
 
 
-@media (max-width: 1024px) {
-p {
-    font-size: 1.4rem;
-}
-}
+
+
 
 /* HEADER */
 
@@ -109,11 +125,19 @@ nav {
 }
 
 nav ul {
-    align-content: flex-end;
-    display: flex;
+      display: flex;
     list-style: none;
 }
 
+nav ul li {
+    margin: 0 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+nav ul li:nth-last-child(1){
+    margin-right:0;
+}
 
 nav li a {
     color: black;
@@ -122,12 +146,6 @@ nav li a {
     font-weight: 500px;
     line-height: 25px;
     margin-bottom: 4px;
-}
-
-nav ul li {
-    margin: 0 15px;
-    overflow: hidden;
-    position: relative;
 }
 
 nav ul li a::after {
@@ -340,6 +358,11 @@ h2 {
     line-height: 30px;
 }
 
+.service-about p:nth-last-child(1) {
+margin-top: 1.6rem;
+}
+
+
 
 @media (max-width: 1440px) {
     .service {
@@ -352,16 +375,6 @@ h2 {
        width: 500px;
  
     }
-
-    h2 {
-           font-size: 2rem;
-          }
-    
-
-    .service-about p {
-        color: red;
-        font-size: 1.4rem;
-           }
 }
 
 
@@ -375,11 +388,10 @@ h2 {
         width: 450px;
     }
 
+    .service-about p:nth-last-child(1) {
+        margin-top: 0;
+        }
  
-    .service-about p {
-        color: blue;
-        font-size: 1.3rem;
-           }
 }
 
 @media (max-width: 1024px) {
@@ -403,7 +415,6 @@ h2 {
     }
 
     .service-about p {
-        color: pink;
         height: auto;
         text-align: center;
     }
@@ -459,6 +470,7 @@ section.pricing {
 .pricing-categories {
     height: 500px;
     margin-right: 10%;
+   
 }
 
 .pricing-categories div {
@@ -468,6 +480,9 @@ section.pricing {
 
     /* border:2px solid red; */
 }
+.pricing-categories div:nth-child(1) {
+    padding-top: 36px;
+}
 
 .pricing-categories div:nth-last-child(1){
     border-bottom: none;
@@ -476,9 +491,9 @@ section.pricing {
 .pricing h3 {
     font-size: 2rem;
     font-weight: bold;
-    line-height: 36px;
+    line-height: 2rem;
     position: relative;
-    padding-bottom: 12px;;
+    padding-bottom: 8px;;
     z-index: -2;
 }
 
@@ -487,7 +502,8 @@ section.pricing {
     font-size: 3.2rem;
     left: -28px;
     position: absolute;
-    top: 3px;
+    top: 0px;
+    line-height: 2rem;
 }
 
 .pricing-categories>div.active h3 {
@@ -562,7 +578,8 @@ p.item-description {
         width: 90%;
     }
 }
-@media(max-width: 1024px){
+
+/* @media(max-width: 1024px){
      .pricing-list-container{
         font-size: 1.8rem;
     }
@@ -579,11 +596,7 @@ p.item-description {
     p.item-description{
         font-size: 1.4rem;
     }
-
-}
-
-
-
+} */
 
 /* Pricelist - ACCORDION  start */
 
@@ -604,8 +617,9 @@ p.item-description {
  padding: 16px 32px 16px 37px;
   }
 
+  /* TODO: temporary marking. To delete */
   .menu-pricing-accordion-categorie.active{
-    background-color: yellow;
+    border: 2px solid #B89288; 
   }
 
 button.menu-pricing-accordion-categorie h3 {
@@ -809,17 +823,6 @@ textarea:focus {
     box-shadow: 0 0 6px 0 #F0F2F6;
 }
 
-
-@media (max-width: 1100px) {
-    .contact-text h3 {
-        font-size: 2rem;
-        line-height: 28px;
-    }
-
-    .contact-form button.send {
-        font-size: 1.4rem;
-    }
-}
 
 @media (max-width: 1024px) {
     .contact-text-wrapper {
