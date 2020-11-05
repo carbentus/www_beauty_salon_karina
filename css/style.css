@@ -202,8 +202,7 @@ section.hero {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* height: 671px; */
-    height: 60vh;
+    height: 671px;
     margin-top: 80px;
     overflow: hidden;
 }
@@ -257,6 +256,7 @@ button {
     section.hero {
         background-image: url("../images/header_1280.jpg");
         height: 537px;
+        height: 60vh;
     }
 
     h1 {
@@ -782,6 +782,11 @@ iframe.contact-map.active {
 
 .contact-text p span {
     margin-left: 34px;
+    display: block;
+}
+.contact-text p span:nth-of-type(1) {
+    margin-left: 4px;
+    display: inline-block;
 }
 
 /* CONTACT FORM - start */
@@ -895,6 +900,91 @@ textarea:focus {
 
     }
 }
+
+ @media (orientation: portrait) and (max-width: 834px) {
+    .contact-text, .contact-form {
+        flex-wrap: wrap;
+    }
+
+    .contact-text-wrapper.mobile {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .contact-icons-wrapper.mobile {
+        padding-left: 0;
+        display: flex;
+        
+    }
+    
+    .contact-text-wrapper .mobile p {
+        flex-basis: 33%;
+        margin: 20px 0;
+        text-align: center;
+    }
+    
+    .contact-icons-wrapper.mobile p:nth-of-type(1),
+    .contact-icons-wrapper.mobile p:nth-of-type(2)  {
+        border-right: 2px solid #F7F7F7;
+    }
+
+    .contact-text-wrapper p i {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+        vertical-align: 0;
+    }
+
+    .contact-text i {
+        color: #B89288;
+        font-size: 2.2rem;
+        line-height: 25px;
+        vertical-align: -4px;
+    }
+
+    .contact-text p span {
+        margin-left: 0;
+    }
+
+    .contact-form input.send {
+        display: block;
+        margin: 16px auto;
+    }
+
+} 
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .contact-icons-wrapper.mobile {
+        flex-wrap: wrap;
+    }
+    .contact-text-wrapper .mobile p {
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+    .contact-text-wrapper .mobile p > * {
+        display: inline-block;
+    }
+
+    .contact-text-wrapper .mobile p > span:nth-of-type(1) {
+        display: none;
+    }
+    .contact-icons-wrapper.mobile p {
+        text-align: left;
+    }
+
+    .contact-icons-wrapper.mobile p:nth-of-type(1),
+    .contact-icons-wrapper.mobile p:nth-of-type(2)  {
+        border-right: none;
+    }
+
+    .contact-text p i {
+        margin-right: 24px;
+        vertical-align: -4px;;
+    }
+
+}
+
 /* CONTACT FORM - end */
 /* CONTACT - end */
 
