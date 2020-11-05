@@ -1,0 +1,56 @@
+[33mcommit eddcb37d75daf32adb32a0ddfe5a817f37d3d1bc[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Karina Dalileh <karinad89@gmail.com>
+Date:   Wed Nov 4 11:08:37 2020 +0100
+
+    change f-z on @media for html, change of formating for  pricelist desktop
+
+[33mcommit 05824b03a9e18a57116edb9d524af8daefa64a7f[m
+Author: Karina Dalileh <karinad89@gmail.com>
+Date:   Tue Nov 3 11:17:53 2020 +0100
+
+    add accordion pricelist for dev.<1024px
+
+[33mcommit 74fe8f2483a0b885c7f8baf8f320c9868a1d02d3[m
+Merge: 257e085 d6dc6cf
+Author: Karina Dalileh <karinad89@gmail.com>
+Date:   Fri Oct 16 10:56:22 2020 +0200
+
+    Merge branch 'master' of
+    https://github.com/carbentus/www_beauty_salon_karina into master
+
+[33mcommit 257e08599c7af499d7307338fc66d8a5fc9fdd2d[m
+Author: Karina Dalileh <karinad89@gmail.com>
+Date:   Fri Oct 16 10:26:12 2020 +0200
+
+    changes in JS code, animation function
+
+[33mcommit d6dc6cf81e7ed7c2952d6422e0fe9ba2b642d20b[m
+Author: Wiktor Kiryłowicz <wiktor@praesens.co>
+Date:   Fri Oct 16 10:21:06 2020 +0200
+
+    Add js css tweaks on live coding session :) (#6)
+
+[33mcommit fce89a09884db542210540c6108246e8cb368332[m
+Merge: a082812 5ad6df3
+Author: Karina Dalileh <karinad89@gmail.com>
+Date:   Thu Oct 15 13:06:22 2020 +0200
+
+    Merge branch 'master' of https://github.com/carbentus/www_beauty_salon_karina into master
+
+[33mcommit a08281211c09e270edcfb467beff2ca0bd83e058[m
+Author: Karina Dalileh <karinad89@gmail.com>
+Date:   Thu Oct 15 13:04:06 2020 +0200
+
+    add @media
+
+[33mcommit 5ad6df39cff8fca4ccc7626baace4a40d5b7a5af[m
+Author: carbentus <72628298+carbentus@users.noreply.github.com>
+Date:   Wed Oct 14 14:51:40 2020 +0200
+
+    Create README.md
+
+[33mcommit 85a24e9a1e2302b33690b51eb02bd9cae467b182[m
+Author: Karina Dalileh <karinad89@gmail.com>
+Date:   Wed Oct 14 14:45:41 2020 +0200
+
+    initial commit

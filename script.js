@@ -134,3 +134,4 @@ for (i = 0; i < acc.length; i++) {
       }
   });
 }
+// TODO:  w raz z otwieraniem kategorii, scrolowanie strony do naglowka wybranej kategorii. zobacz: https://www.bundesregierung.de/breg-de/themen/coronavirus/corona-massnahmen-1734724
