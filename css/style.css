@@ -54,11 +54,10 @@ body {
 
 
 
-
-
 /* HEADER */
 
 div.header-fixed {
+  
     background-color: white;
     box-shadow: 0px -2px 5px 0px rgb(146, 144, 144);
     height: 85px;
@@ -75,7 +74,6 @@ header {
     margin: 0 auto;
     /* width: 100%; */
     max-width: 1280px;
-
 }
 
 /* LOGO */
@@ -202,17 +200,23 @@ section.hero {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 671px;
+    height: 80vh;
+    width: 100vw;
+   
     margin-top: 80px;
     overflow: hidden;
+    position: relative;
 }
 
 .hero-text-containter {
-    margin: 0 auto;
-    padding-top: 8%;
-    width: 1280px;
-}
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width:1280px;
 
+}
 
 h1.hero-title {
     letter-spacing: 2px;
@@ -241,21 +245,18 @@ button {
     font-size: 1.6rem;
     font-weight: bold;
     letter-spacing: 1.5px;
-    margin: 32px 0;
+    margin-top: 32px;
     text-transform: uppercase;
     transition: .6s;
 }
 
-@media (max-width: 1440px) {
-    .hero-text-containter {
-        width: 90%;
-    }
-}
+/* @media (max-width: 1440px) {
+ 
+} */
 
 @media (max-width: 1280px) {
     section.hero {
         background-image: url("../images/header_1280.jpg");
-        height: 537px;
         height: 60vh;
     }
 
@@ -279,20 +280,42 @@ button {
     section.hero {
         background-image: url("../images/header_1024.jpg");
         height: 50vh;
+     }
+
+     .hero-text-containter {
+        width: 90%;
+        top: 60%;
     }
 
-    .hero-text-containter {
-        width: 70%;
+    h1.hero-title, p.hero-text-small {
+        width: 50%;
     }
-
+  
 }
+
+
+@media (orientation: landscape) and (max-width: 823px) {
+    section.hero {
+        height: 80vh;
+    }
+
+     h1.hero-title, p.hero-text-small {
+        width: 60%;
+     }
+
+     h1 {
+        font-size: 2.6rem;
+    }
+
+    p.hero-text-small {
+        font-size: 1.6rem;
+    }
+  }
 
 @media (orientation: portrait) and (max-width: 640px) {
     .hero-text-containter {
-        width: 70%;
-        text-align: center;
+        top: 50%;
     }
-
     h1 {
         font-size: 3.2rem;
     }
@@ -300,17 +323,32 @@ button {
     p.hero-text-small {
         font-size: 1.6rem;
     }
-
-    h1.hero-title, p.hero-text-small {
-        width:100%;
-      }  
   }
+
+  @media (orientation: landscape) and (max-width: 640px) {
+       h1.hero-title, p.hero-text-small {
+        width: 70%;
+     }
+
+     h1 {
+        font-size: 2.4rem;
+    }
+
+    p.hero-text-small {
+        font-size: 1.6rem;
+    }
+  }
+
 
 @media (orientation: portrait) and (max-width: 414px) {
     .hero-text-containter {
-        width: 75%;
-        padding-top: 15%;
+        width: 90%;
+        text-align: center;
     } 
+
+    h1.hero-title, p.hero-text-small {
+        width: 100%;
+     }
     
     h1 {
         font-size: 2.6rem;
@@ -320,7 +358,29 @@ button {
         font-size: 1.5rem;
         line-height: 2rem;
     }
+
 }
+
+@media (orientation: portrait) and (max-width: 320px) {
+    /* .hero-text-containter {
+        padding-top: 8%;
+    }  */
+    
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    p.hero-text-small {
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    .hero button.book-a-visit {
+        margin: 24px 0;
+    }
+} 
+
+
 
 /* Services description */
 
@@ -470,9 +530,20 @@ margin-top: 1.6rem;
 .service-picture.face img, 
 .service-picture.waxing img,
 .service-picture.manicure img {
-    margin: 0;
+    margin: 0 auto;
+    display: block;
 }
 
+}
+
+@media (orientation: landscape) and (max-width: 768px) {
+    .service {
+        position: relative;
+    }
+
+    .service-picture img {
+        width: 90%;     
+    }
 }
 
 
