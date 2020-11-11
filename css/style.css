@@ -103,6 +103,9 @@ nav .logo-wrapper{
 
 .nav-links li{
     list-style: none;
+    position: relative;
+    overflow: hidden;
+    margin:0 16px;
 }
 
 .nav-links li:nth-child(1){
@@ -115,8 +118,7 @@ nav .logo-wrapper{
     color: black;
     font-size: 1.5rem;
     font-weight: 500px;
-    padding: 10px 16px;
-    margin:0 16px;
+    padding: 5px 0;
     cursor: pointer;
 }
 
@@ -124,8 +126,24 @@ nav .logo-wrapper{
     padding-right: 0;
  }
 
-/* --- Burger --- */
+ .nav-links li a::after{
+    background-color: #B89288;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: -100%;
+    position: absolute;
+    transition: 0.3s ease;
+    width: 100%;
+    z-index: -2;
+ }
 
+ .nav-links li a:hover::after{
+    left:0;
+}
+
+
+ /* --- Burger --- */
 .burger{
     display: none;
     cursor: pointer;
@@ -154,11 +172,13 @@ header{
     }
 }
 
-@media screen and (max-width: 768px){
+
+@media screen and (max-width: 1024px){
     header, div.header-fixed {
         height: 44px;
     }
-    
+
+  
 .nav-links {
     position: absolute;
     top: 44px;
@@ -235,90 +255,6 @@ text-transform: uppercase;
 .active .line3{
     transform: rotate(45deg) translate(-5px, -5px);
 }
-
-
-
-/* ------------NAV STARY-------------------------- */
-
-
-/* a {
-    text-decoration: none;
-} */
-
-/* .nav-screen {
-    display: flex;
-    padding: 21px 0;
-}
-
-.nav-screen ul {
-    display: flex;
-    list-style: none;
-} */
-/* 
-.nav-screen ul li {
-    margin: 0 15px;
-    overflow: hidden;
-    position: relative;
-}
-
-.nav-screen ul li:nth-last-child(1){
-    margin-right:0;
-} */
-
-/* .nav-screen li a {
-    color: black;
-    display: block;
-    font-size: 1.7rem;
-    font-weight: 500px;
-    line-height: 24px;
-    margin-bottom: 4px;
-} */
-
-/* .nav-screen ul li a::after {
-    background-color: #B89288;
-    bottom: 0;
-    content: "";
-    height: 2px;
-    left: -100%;
-    position: absolute;
-    transition: 0.3s ease;
-    width: 100%;
-    z-index: -2;
-}
-
-a:hover::after {
-    left: 0;
-} */
-
-/* 
-@media (max-width: 1440px) {
-    header {
-        max-width: 90%;
-    }
-}
-
-@media (max-width: 1280px) {
-    .nav-screen li a {
-        font-size: 1.5rem;
-    }
-   
-} */
-/* 
-@media (max-width: 1024px) { */
-/* .logoContainer{
-display: none;
-} */
-/* 
-    div.header-fixed {
-     height: 44px;
-} */
-
-/* .nav-screen{
-    display: none;
-} 
- 
- */
-
 
 
 /* HERO */
