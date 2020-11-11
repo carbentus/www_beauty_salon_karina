@@ -7,7 +7,7 @@ $("nav a").on("click", function (ev) {
     const goToSection = "[data-section=" + $(this).attr("class") + "]";
     $("body, html").animate(
       {
-        scrollTop: $(goToSection).offset().top - 85,
+        scrollTop: $(goToSection).offset().top - 70,
       },
       1000
     );
