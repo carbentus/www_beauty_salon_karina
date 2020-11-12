@@ -1,8 +1,9 @@
 // ----------- Click on NAV --> SCROLL  to section  -- JQ --
- let throttleTimeout = 0;
+var throttleTimeout = 0;
 $("nav a").on("click", function (ev) {
   ev.preventDefault();
   clearTimeout(throttleTimeout);
+  
   throttleTimeout = setTimeout(() => {
     const goToSection = "[data-section=" + $(this).attr("class") + "]";
     $("body, html").animate(
@@ -50,15 +51,15 @@ const $serviceFace = $(".services .service.face");
 const $serviceManicure = $(".services .service.manicure");
 const $serviceContactMap = $(".contact-map");
 
-let windowHeight;
-let serviceWaxingFromTop;
-let serviceWaxingHeight;
-let serviceFaceFromTop;
-let serviceFaceHeight;
-let serviceManicureFromTop;
-let serviceManicureHeight;
-let serviceContactMapFromTop;
-let serviceContactMapHeight;
+var windowHeight;
+var serviceWaxingFromTop;
+var serviceWaxingHeight;
+var serviceFaceFromTop;
+var serviceFaceHeight;
+var serviceManicureFromTop;
+var serviceManicureHeight;
+var serviceContactMapFromTop;
+var serviceContactMapHeight;
 
 const onResize = function onDocumentResize() {
   //   console.log("resize");
@@ -106,11 +107,13 @@ $(document).on("scroll", function () {
   }
 });
 
-// ACCORDION
+
+
+// ----- ACCORDION  Pricelist
 
 // acc=button
-var acc = document.getElementsByClassName("menu-pricing-accordion-categorie");
-var panels = document.getElementsByClassName("accordion-pricing-list-items");
+const acc = document.getElementsByClassName("menu-pricing-accordion-categorie");
+const panels = document.getElementsByClassName("accordion-pricing-list-items");
 var i;
 
 for (i = 0; i < acc.length; i++) {
@@ -122,13 +125,13 @@ for (i = 0; i < acc.length; i++) {
     //         panels[i].previousElementSibling.classList.remove("active");
     //          }
     // }
-
     this.classList.toggle("active");
 
-    var arr = this.lastChild;
+    const arr = this.lastChild;
     arr.classList.toggle("active");
 
-    var panel = this.nextElementSibling;
+
+    const panel = this.nextElementSibling;
     if (panel.style.display === "flex") {
       panel.style.display = "none";
     } else {
@@ -142,6 +145,8 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+
 // TODO:  w raz z otwieraniem kategorii, scrolowanie strony do naglowka wybranej kategorii. zobacz: https://www.bundesregierung.de/breg-de/themen/coronavirus/corona-massnahmen-1734724
 
 // Burger Menu
@@ -155,14 +160,17 @@ const navSlide = () => {
   nav.classList.toggle("nav-active");
 
   // close Nav after clicking anchor
-  navLinks.forEach((link) => {
+  // navLinks.forEach((link, index) => {
   
-    link.addEventListener("click", function () {
-      console.log("działa listener!!");
-      nav.classList.toggle("nav-active");
-      burger.classList.toggle('active');
-    });
-    });
+  //   link.addEventListener("click", function () {
+  //     console.log("działa listener!!");
+  //     nav.classList.toggle("nav-active");
+  //     burger.classList.toggle('active');
+
+  //     console.log(link.index);
+
+  //      });
+  //   });
 
   // Animate Links   (indeks = quantity of Links) , da opóźnienie wejścia dla każdego  
     navLinks.forEach((link, index) => { 
@@ -171,7 +179,6 @@ const navSlide = () => {
             } else{
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5 + 0.3}s`;
             }
-    
       });
 
 
@@ -182,4 +189,3 @@ const navSlide = () => {
   });
 }
 navSlide();
-
