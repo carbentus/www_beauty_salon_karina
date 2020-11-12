@@ -108,6 +108,11 @@ nav .logo-wrapper{
     margin:0 16px;
 }
 
+.nav-links li:nth-last-child(1){
+    margin-right: 0;
+}
+
+
 .nav-links li:nth-child(1){
     display: none;
 }
@@ -161,7 +166,8 @@ nav .logo-wrapper{
 /* MEDIA start */
 @media screen and (max-width: 1440px){
 header{
-    padding: 0 5%;
+    max-width:90%;
+    /* padding: 0 5%; */
 }
 }
 
@@ -178,6 +184,10 @@ header{
         height: 44px;
     }
 
+        header{
+            max-width:100%;
+            padding: 0 5%;
+        }
   
 .nav-links {
     position: absolute;
@@ -362,9 +372,9 @@ button {
   
 }
 
-@media (orientation: landscape) and (max-width: 823px) {
+@media (orientation: landscape) and (max-width: 853px) {
     section.hero {
-        height: 80vh;
+        height: calc(100vh - 44px);
     }
 
      h1.hero-title, p.hero-text-small {
@@ -376,24 +386,25 @@ button {
     }
 
     p.hero-text-small {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
     }
   }
 
-@media (orientation: portrait) and (max-width: 640px) {
+@media (orientation: portrait) and (max-width: 667px) {
+ 
     .hero-text-containter {
         top: 50%;
     }
     h1 {
         font-size: 3.2rem;
-    }
-
+    }7
     p.hero-text-small {
         font-size: 1.6rem;
     }
   }
 
-  @media (orientation: landscape) and (max-width: 640px) {
+  @media (orientation: landscape) and (max-width: 667px) {
+ 
        h1.hero-title, p.hero-text-small {
         width: 70%;
      }
@@ -407,6 +418,12 @@ button {
     }
   }
 
+  @media (orientation: landscape) and (max-width: 568px) {
+    .hero button.book-a-visit{
+        margin-top: 16px;
+    }
+  }
+
 
 @media (orientation: portrait) and (max-width: 414px) {
     .hero-text-containter {
@@ -415,15 +432,15 @@ button {
     } 
 
     h1.hero-title, p.hero-text-small {
-        width: 100%;
+        width: 90%;
      }
     
     h1 {
-        font-size: 2.6rem;
+        font-size: 2.8rem;
     }
 
     p.hero-text-small {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         line-height: 2rem;
     }
 
@@ -444,7 +461,7 @@ button {
     }
 
     .hero button.book-a-visit {
-        margin: 24px 0;
+        margin: 24px 0 0;
     }
 } 
 
