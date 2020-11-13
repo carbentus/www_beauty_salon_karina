@@ -282,7 +282,8 @@ text-transform: uppercase;
 
 @media screen and (max-width: 480px){
     .nav-links {
-    width: 270px;
+        width: 270px;
+        right: -270px;
     }
 
     .nav-links li a {
