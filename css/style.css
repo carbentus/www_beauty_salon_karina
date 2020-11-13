@@ -11,6 +11,7 @@ font-family: 'Playfair Display', serif;
 
 body {
     overflow-x: hidden;
+    width: 100%;
 }
 
 html {
@@ -33,7 +34,7 @@ html {
 @media screen and (max-width: 1024px) {
     html {
         font-size: 8.5px;
-    }   
+    }  
 }
 
 
@@ -190,21 +191,20 @@ header{
         }
   
 .nav-links {
-    position: absolute;
-    display: block;
-    top: 44px;
-    right: 0;
-    height: calc(100vh - 44px);
-    overflow-y: auto;
+    align-items: stretch;
     background-color: white;
+    display: block;
+    flex-direction: column;
+    height: calc(100vh - 44px);
+    justify-content: flex-start;
+    overflow-y: auto;
+    position: absolute;
+    right: -450px;
+    top: 44px;
+    transform: translateX(0);
+    transition: transform .5s ease-in;
     width: 450px;
     z-index: -1;
-
-flex-direction: column;
-justify-content: flex-start;
-align-items: stretch;
-transform: translateX(100%);
-transition: transform .5s ease-in;
 }   
 
 .nav-links li:nth-child(1){
@@ -293,7 +293,7 @@ text-transform: uppercase;
 /* MEDIA End */
 
 .nav-active {
-    transform: translateX(0);
+    transform: translateX(-100%);
 }
 
 @keyframes navLinkFade{
@@ -450,7 +450,8 @@ button {
     }
     h1 {
         font-size: 3.2rem;
-    }7
+    }
+
     p.hero-text-small {
         font-size: 1.6rem;
     }
