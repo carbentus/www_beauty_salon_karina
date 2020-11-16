@@ -1,20 +1,3 @@
-// ----------- Click on NAV --> SCROLL  to section  -- JQ --
-var throttleTimeout = 0;
-$("nav a").on("click", function (ev) {
-  ev.preventDefault();
-  clearTimeout(throttleTimeout);
-
-  throttleTimeout = setTimeout(() => {
-    const goToSection = "[data-section=" + $(this).attr("class") + "]";
-    $("body, html").animate(
-      {
-        scrollTop: $(goToSection).offset().top - 70,
-      },
-      1000
-    );
-  }, 100);
-});
-
 // ----------- Pricelist display
 
 $(".pricing-categories>div").on("click", function () {
@@ -44,12 +27,6 @@ $(".book-a-visit").on("click", function () {
 });
 
 // Animation, scroll
-
-window.addEventListener('resize', function(){
-  if (window.screen.width < 1440){
-  console.log("The width of the document is < 1440");
-}
-});
 
 const $serviceWaxing = $(".services .service.waxing");
 const $serviceFace = $(".services .service.face");
@@ -115,83 +92,96 @@ $(document).on("scroll", function () {
 // ----- ACCORDION  Pricelist
 
 // acc=button
-const acc = document.getElementsByClassName("menu-pricing-accordion-categorie");
-const panels = document.getElementsByClassName("accordion-pricing-list-items");
-var i;
+const acc = document.querySelectorAll(".menu-pricing-accordion-categorie");
+const panels = document.querySelectorAll(".accordion-pricing-list-items");
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    for (i = 0; i < panels.length; i++) {
-      if (acc != this) {
-        panels[i].style.maxHeight = null;
-        panels[i].style.display = "none";
-        //  to nie działą ???? dlaczego
-        panels[i].previousElementSibling.classList.remove("active");
-        // TODO: Odebrać klase strzałce; arr.
-      }
-    }
-    this.classList.toggle("active");
+const onTabClick = (event) => {
+  const clickedTab = event.currentTarget;
 
-    const arr = this.lastChild;
-    arr.classList.toggle("active");
-
-    const panel = this.nextElementSibling;
-    if (panel.style.display === "flex") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "flex";
-    }
-
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
+  [].forEach.call(acc, (tab, i) => {
+    if (tab != clickedTab) {
+      panels[i].style.maxHeight = null;
+      panels[i].style.display = "none";
+      panels[i].previousElementSibling.classList.remove("active");
     }
   });
-}
 
+  clickedTab.classList.toggle("active");
+
+  const arr = clickedTab.lastChild;
+  arr.classList.toggle("active");
+
+  const panel = clickedTab.nextElementSibling;
+  if (panel.style.display === "flex") {
+    panel.style.display = "none";
+  } else {
+    panel.style.display = "flex";
+  }
+
+  if (panel.style.maxHeight) {
+    panel.style.maxHeight = null;
+  } else {
+    panel.style.maxHeight = panel.scrollHeight + "px";
+  }
+
+  $("body, html").animate(
+    {
+      scrollTop: $(clickedTab).offset().top - 70,
+    },
+    400
+  );
+};
+
+[].forEach.call(acc, (tab) => {
+  tab.addEventListener("click", onTabClick);
+});
 
 // TODO:  w raz z otwieraniem kategorii, scrolowanie strony do naglowka wybranej kategorii. zobacz: https://www.bundesregierung.de/breg-de/themen/coronavirus/corona-massnahmen-1734724
 
-// Burger Menu
-const navSlide = () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav-links");
-  const navLinks = document.querySelectorAll(".nav-links li");
+const nav = document.querySelector(".nav-links");
+const navLinks = document.querySelectorAll(".nav-links li");
+const burger = document.querySelector(".burger");
 
-  burger.addEventListener(
-      "click", () => {
-    // Toggle Nav
-    nav.classList.toggle("nav-active");
+const toggleNav = () => {
+  const isOpen = nav.classList.contains("nav-active");
 
-    // close Nav after clicking anchor
-    navLinks.forEach((link, index) => {
-
-      link.addEventListener("click", function () {
-        console.log("działa listener!!");
-        nav.classList.toggle("nav-active");
-        burger.classList.toggle('active');
-
-        console.log(link.index);
-
-         });
-      });
-
-    // Animate Links   (indeks = quantity of Links) , da opóźnienie wejścia dla każdego
-    navLinks.forEach((link, index) => {
-      if (link.style.animation) {
-        link.style.animation = "";
-      } else {
-        link.style.animation = `navLinkFade 0.5s ease forwards ${
-          index / 5 + 0.3
-        }s`;
-      }
+  if (isOpen) {
+    // close nav
+    nav.classList.remove("nav-active");
+    navLinks.forEach((link) => {
+      link.style.animation = "";
     });
+    burger.classList.remove("active");
+    return;
+  }
 
-    // Burger toggle
-    burger.classList.toggle("active");
-
-    // Listener end
+  // open nav
+  nav.classList.add("nav-active");
+  navLinks.forEach((link, index) => {
+    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5 + 0.3}s`;
   });
+  burger.classList.add("active");
 };
-navSlide();
+
+burger.addEventListener("click", () => {
+  toggleNav();
+});
+
+// ----------- Click on NAV --> SCROLL  to section  -- JQ --
+var throttleTimeout = 0;
+$("nav a").on("click", function (ev) {
+  ev.preventDefault();
+  clearTimeout(throttleTimeout);
+
+  toggleNav();
+
+  throttleTimeout = setTimeout(() => {
+    const goToSection = "[data-section=" + $(this).attr("class") + "]";
+    $("body, html").animate(
+      {
+        scrollTop: $(goToSection).offset().top - 70,
+      },
+      1000
+    );
+  }, 100);
+});
