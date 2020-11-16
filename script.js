@@ -3,7 +3,7 @@ var throttleTimeout = 0;
 $("nav a").on("click", function (ev) {
   ev.preventDefault();
   clearTimeout(throttleTimeout);
-  
+
   throttleTimeout = setTimeout(() => {
     const goToSection = "[data-section=" + $(this).attr("class") + "]";
     $("body, html").animate(
@@ -13,8 +13,7 @@ $("nav a").on("click", function (ev) {
       1000
     );
   }, 100);
-}); 
-
+});
 
 // ----------- Pricelist display
 
@@ -45,6 +44,12 @@ $(".book-a-visit").on("click", function () {
 });
 
 // Animation, scroll
+
+window.addEventListener('resize', function(){
+  if (window.screen.width < 1440){
+  console.log("The width of the document is < 1440");
+}
+});
 
 const $serviceWaxing = $(".services .service.waxing");
 const $serviceFace = $(".services .service.face");
@@ -107,8 +112,6 @@ $(document).on("scroll", function () {
   }
 });
 
-
-
 // ----- ACCORDION  Pricelist
 
 // acc=button
@@ -118,18 +121,19 @@ var i;
 
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function () {
-    // for (i=0; i< panels.length; i++){
-    //       if (acc != this) {
-    //         panels[i].style.maxHeight = null;
-    //         panels[i].style.display= "none";
-    //         panels[i].previousElementSibling.classList.remove("active");
-    //          }
-    // }
+    for (i = 0; i < panels.length; i++) {
+      if (acc != this) {
+        panels[i].style.maxHeight = null;
+        panels[i].style.display = "none";
+        //  to nie działą ???? dlaczego
+        panels[i].previousElementSibling.classList.remove("active");
+        // TODO: Odebrać klase strzałce; arr.
+      }
+    }
     this.classList.toggle("active");
 
     const arr = this.lastChild;
     arr.classList.toggle("active");
-
 
     const panel = this.nextElementSibling;
     if (panel.style.display === "flex") {
@@ -155,37 +159,39 @@ const navSlide = () => {
   const nav = document.querySelector(".nav-links");
   const navLinks = document.querySelectorAll(".nav-links li");
 
-  burger.addEventListener("click", () => {
-  // Toggle Nav
-  nav.classList.toggle("nav-active");
+  burger.addEventListener(
+      "click", () => {
+    // Toggle Nav
+    nav.classList.toggle("nav-active");
 
-  // close Nav after clicking anchor
-  // navLinks.forEach((link, index) => {
-  
-  //   link.addEventListener("click", function () {
-  //     console.log("działa listener!!");
-  //     nav.classList.toggle("nav-active");
-  //     burger.classList.toggle('active');
+    // close Nav after clicking anchor
+    navLinks.forEach((link, index) => {
 
-  //     console.log(link.index);
+      link.addEventListener("click", function () {
+        console.log("działa listener!!");
+        nav.classList.toggle("nav-active");
+        burger.classList.toggle('active');
 
-  //      });
-  //   });
+        console.log(link.index);
 
-  // Animate Links   (indeks = quantity of Links) , da opóźnienie wejścia dla każdego  
-    navLinks.forEach((link, index) => { 
-            if (link.style.animation) {
-                    link.style.animation = '';
-            } else{
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5 + 0.3}s`;
-            }
+         });
       });
 
+    // Animate Links   (indeks = quantity of Links) , da opóźnienie wejścia dla każdego
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = "";
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${
+          index / 5 + 0.3
+        }s`;
+      }
+    });
 
-  // Burger toggle
-    burger.classList.toggle('active');
+    // Burger toggle
+    burger.classList.toggle("active");
 
-// Listener end
+    // Listener end
   });
-}
+};
 navSlide();
