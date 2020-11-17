@@ -966,10 +966,14 @@ iframe.contact-map.active {
 
 .contact-text,
 .contact-form {
+    position: relative;
     flex-basis: 50%;
 }
 
 .contact-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     color: #444;
     font-size: 1.8px;
     letter-spacing: 1.1px;
@@ -983,7 +987,7 @@ iframe.contact-map.active {
     font-weight: bold;
     letter-spacing: 1.51px;
     line-height: 33px;
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
 .contact-text i {
@@ -994,8 +998,13 @@ iframe.contact-map.active {
     vertical-align: -4px;
 }
 
+.contact-icons-wrapper{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+}
 .contact-text-wrapper p {
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
 .contact-text p span {
@@ -1050,6 +1059,9 @@ iframe.contact-map.active {
 
 /* .contact-form button.send */
 .contact-form input.send {
+    position: absolute;
+    left:0;
+    bottom:0;
     background-color: #B89288;
     border-radius: 3px;
     border-style: none;
@@ -1060,7 +1072,7 @@ iframe.contact-map.active {
     font-weight: bold;
     height: auto;
     letter-spacing: 1.1px;
-    margin: 16px 0;
+    margin-top: 16px;
     padding: 16px 24px;
     text-transform: uppercase;
     transition: .4s;
@@ -1105,12 +1117,12 @@ textarea:focus {
 
     .contact-text-wrapper.mobile {
         margin-bottom: 40px;
-        width: 60%;
+        width: 50%;
     }
 
     .contact-icons-wrapper.mobile {
         flex-grow: 1;
-        padding-left: 10%;
+        padding-left: 7%;
     }
 
     .contact-form button.send {
