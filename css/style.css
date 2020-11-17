@@ -157,6 +157,9 @@ nav .logo-wrapper{
 .burger{
     display: none;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
 }
 
 .burger div{

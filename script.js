@@ -91,7 +91,7 @@ $(document).on("scroll", function () {
 
 // ----- ACCORDION  Pricelist
 
-// acc=button
+// acc= clickable caterogry line
 const acc = document.querySelectorAll(".menu-pricing-accordion-categorie");
 const panels = document.querySelectorAll(".accordion-pricing-list-items");
 
@@ -103,6 +103,9 @@ const onTabClick = (event) => {
       panels[i].style.maxHeight = null;
       panels[i].style.display = "none";
       panels[i].previousElementSibling.classList.remove("active");
+
+      const ArrowToClose = panels[i].previousElementSibling;
+      ArrowToClose.lastChild.classList.remove("active");
     }
   });
 
@@ -128,7 +131,7 @@ const onTabClick = (event) => {
     {
       scrollTop: $(clickedTab).offset().top - 70,
     },
-    400
+    500
   );
 };
 
@@ -136,8 +139,8 @@ const onTabClick = (event) => {
   tab.addEventListener("click", onTabClick);
 });
 
-// TODO:  w raz z otwieraniem kategorii, scrolowanie strony do naglowka wybranej kategorii. zobacz: https://www.bundesregierung.de/breg-de/themen/coronavirus/corona-massnahmen-1734724
 
+// Toggle menu
 const nav = document.querySelector(".nav-links");
 const navLinks = document.querySelectorAll(".nav-links li");
 const burger = document.querySelector(".burger");
@@ -158,13 +161,13 @@ const toggleNav = () => {
   // open nav
   nav.classList.add("nav-active");
   navLinks.forEach((link, index) => {
-    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 15 + 0.2}s`;
+  link.style.animation = `navLinkFade 0.5s ease forwards ${index / 15 + 0.2}s`;
   });
   burger.classList.add("active");
 };
 
 burger.addEventListener("click", () => {
-  toggleNav();
+    toggleNav();
 });
 
 // ----------- Click on NAV --> SCROLL  to section  -- JQ --
@@ -172,16 +175,24 @@ var throttleTimeout = 0;
 $("nav a").on("click", function (ev) {
   ev.preventDefault();
   clearTimeout(throttleTimeout);
+ 
+  if (burger.classList.contains("active")){
+    toggleNav();
+  }  
 
-  toggleNav();
-
-  throttleTimeout = setTimeout(() => {
+  throttleTimeout = setTimeout(() => 
+  {    
     const goToSection = "[data-section=" + $(this).attr("class") + "]";
+    const headerHeight = document.querySelector("div.header-fixed").clientHeight;
+    
     $("body, html").animate(
       {
-        scrollTop: $(goToSection).offset().top - 70,
+        scrollTop: $(goToSection).offset().top - headerHeight,
       },
       1000
     );
   }, 100);
 });
+
+
+
