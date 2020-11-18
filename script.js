@@ -132,7 +132,7 @@ const onTabClick = (event) => {
     {
       scrollTop: $(clickedTab).offset().top - headerHeight,
     },
-    700
+    600
   );
 };
 
@@ -173,7 +173,7 @@ burger.addEventListener("click", () => {
 
 // ----------- Click on NAV --> SCROLL  to section  -- JQ --
 var throttleTimeout = 0;
-$("nav a").on("click", function (ev) {
+$("nav ul li a").on("click", function (ev) {
   ev.preventDefault();
   clearTimeout(throttleTimeout);
  
@@ -184,13 +184,13 @@ $("nav a").on("click", function (ev) {
   throttleTimeout = setTimeout(() => 
   {    
     const goToSection = "[data-section=" + $(this).attr("class") + "]";
-    const headerHeight = document.querySelector("div.header-fixed").clientHeight;
+    const headerHeight = document.querySelector("div.header-fixed").clientHeight -1;
     
     $("body, html").animate(
       {
         scrollTop: $(goToSection).offset().top - headerHeight,
       },
-      1000
+      700
     );
   }, 100);
 });
