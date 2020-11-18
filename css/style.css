@@ -940,12 +940,6 @@ section.contact {
     width: 1280px;
 }
 
-@media screen and (max-width: 1440px) {
-    section.contact {
-        width: 90%;
-    }
-}
-
 iframe.contact-map {
     transform: scale(0);
     transition: 1.5s;
@@ -964,9 +958,13 @@ iframe.contact-map.active {
     flex-wrap: wrap;
 }
 
+
+.contact-text-inside-wrapper {
+    min-height: 172px;
+}
+
 .contact-text,
 .contact-form {
-    position: relative;
     flex-basis: 50%;
 }
 
@@ -992,32 +990,36 @@ iframe.contact-map.active {
 
 .contact-text i {
     color: #B89288;
-    font-size: 2.2rem;
+    font-size: 2rem;
     line-height: 25px;
-    margin-right: 10px;
+    margin-right: 16px;
     vertical-align: -4px;
 }
 
-.contact-icons-wrapper{
+.contact-text i:nth-child(1) {
+   vertical-align: -6px;
+}
+
+.contact-icons-inside-wrapper{
     display: flex;
     flex-direction: column;
-    /* justify-content: flex-end; */
+    flex-grow:1;
+    justify-content: flex-start;
 }
 .contact-text-wrapper p {
     margin-top: 20px;
 }
 
-.contact-text p span {
+.contact-icons-inside-wrapper p span {
     margin-left: 34px;
     display: block;
 }
-.contact-text p span:nth-of-type(1) {
-    margin-left: 4px;
+.contact-icons-inside-wrapper p span:nth-of-type(1) {
+    margin-left: 0px;
     display: inline-block;
 }
 
 /* CONTACT FORM - start */
-
 
 .contact-form p {
     color: #444444;
@@ -1059,9 +1061,7 @@ iframe.contact-map.active {
 
 /* .contact-form button.send */
 .contact-form input.send {
-    position: absolute;
-    left:0;
-    bottom:0;
+    display: block;
     background-color: #B89288;
     border-radius: 3px;
     border-style: none;
@@ -1092,16 +1092,24 @@ textarea:focus {
     box-shadow: 0 0 6px 0 #F0F2F6;
 }
 
+/* contact - media 1440 - START */
+@media screen and (max-width: 1440px) {
+    section.contact {
+        width: 90%;
+    }
+
+}
+/* contact - media 1440 - END */
 
 @media screen and (max-width: 1024px) {
     .contact-text-wrapper {
-        align-items: center;
         flex-direction: column;
     }
 
     .contact-text,
     .contact-form {
         display: flex;
+        flex-direction: row;
         padding-right: 0;
         width: 100%;
     }
@@ -1110,102 +1118,103 @@ textarea:focus {
         width: 100%;
     }
 
-    .contact-text-wrapper.mobile {
-        align-items: flex-start;
-        display: flex;
-    }
-
-    .contact-text-wrapper.mobile {
+    .contact-text-inside-wrapper {
         margin-bottom: 40px;
         width: 50%;
     }
 
-    .contact-icons-wrapper.mobile {
-        flex-grow: 1;
+    .contact-icons-inside-wrapper {
         padding-left: 7%;
     }
 
     .contact-form button.send {
         display: block;
         margin: 16px auto;
-
     }
 }
 
  @media screen and (orientation: portrait) and (max-width: 834px) {
-    .contact-text, .contact-form {
-        flex-wrap: wrap;
+    .contact-text, 
+    .contact-form {
+        flex-direction: column;
+        width: 80%;
+        margin: 24px auto;
     }
 
-    .contact-text-wrapper.mobile {
+    .contact-text-inside-wrapper  {
         width: 100%;
         text-align: center;
-        margin-bottom: 24px;
+        min-height: auto;
     }
 
-    .contact-icons-wrapper.mobile {
-        padding-left: 0;
-        display: flex;
-        
-    }
-    
-    .contact-text-wrapper .mobile p {
-        flex-basis: 33%;
-        margin: 20px 0;
-        text-align: center;
-    }
-    
-    .contact-icons-wrapper.mobile p:nth-of-type(1),
-    .contact-icons-wrapper.mobile p:nth-of-type(2)  {
-        border-right: 2px solid #F7F7F7;
-    }
+    .contact-text h3 {
+        margin-top: 0;
 
-    .contact-text-wrapper p i {
-        display: block;
-        margin-right: 0;
-        margin-bottom: 10px;
-        /* vertical-align: 0; */
     }
-
-    .contact-text i {
-        color: #B89288;
-        font-size: 2.2rem;
-        line-height: 25px;
-        vertical-align: -4px;
+    .contact-icons-inside-wrapper {
+        padding-left: 0%;
     }
 
     .contact-text p span {
-        margin-left: 0;
+        margin-left: 33px;
     }
 
     .contact-form input.send {
-        display: block;
-        margin: 16px auto;
+        margin: 16px 0;
     }
-
 } 
 
-@media screen and (max-width: 768px) and (orientation: portrait) {
-    .contact-icons-wrapper.mobile {
+@media screen and (max-width: 480px) and (orientation: portrait) 
+{
+    .contact-text, 
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-text-inside-wrapper{
+    margin-bottom: 24px;
+    }
+
+    .contact-icons-inside-wrapper{
+        text-align: center;
+    }    
+
+    .contact-text p span{
+        margin-left: 0;
+    }
+
+    .contact-icons-inside-wrapper i{
+        display: block;
+        margin-right: 0;
+    }
+
+    .contact-form input.send{
+        margin: 16px auto;
+    }
+}
+
+/* @media screen and (max-width: 768px) and (orientation: portrait) 
+{
+    .contact-icons-inside-wrapper {
         flex-wrap: wrap;
     }
-    .contact-text-wrapper .mobile p {
+    .contact-text-inside-wrapper p {
         flex-basis: 100%;
         margin: 10px 0;
     }
-    .contact-text-wrapper .mobile p > * {
+    .contact-text-inside-wrapper p > * {
         display: inline-block;
     }
 
-    .contact-text-wrapper .mobile p > span:nth-of-type(1) {
+    .contact-text-inside-wrapper p > span:nth-of-type(1) {
         display: none;
     }
-    .contact-icons-wrapper.mobile p {
+    .contact-icons-inside-wrapperp {
         text-align: left;
     }
 
-    .contact-icons-wrapper.mobile p:nth-of-type(1),
-    .contact-icons-wrapper.mobile p:nth-of-type(2)  {
+    .contact-icons-inside-wrapper p:nth-of-type(1),
+    .contact-icons-inside-wrapperp:nth-of-type(2)  {
         border-right: none;
     }
 
@@ -1214,7 +1223,7 @@ textarea:focus {
         vertical-align: -4px;;
     }
 
-}
+} */
 
 /* CONTACT FORM - end */
 /* CONTACT - end */
@@ -1223,8 +1232,8 @@ textarea:focus {
 /* FOOTER */
 footer {
     background-color: #221E1F;
-    height: 8vh;
-    margin-top: 72px;
+    height: 10vh;
+    margin-top: 56px;
 }
 
 footer p {
@@ -1247,4 +1256,12 @@ footer p {
     footer p {
         font-size: 12px;
     }
+}
+
+@media screen and (orientation: portrait) and (max-width: 834px) {
+    footer {
+        height: 8vh;
+        margin-top: 24px;
+    }
+    
 }
