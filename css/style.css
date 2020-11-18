@@ -513,6 +513,19 @@ button {
   }
 
 
+  @media screen and (orientation: portrait) and (max-width: 480px) {
+    h1.hero-title, p.hero-text-small {
+        width: 60%;
+    }
+    
+    h1 {
+        font-size: 2.6rem;
+    }
+
+  }
+
+
+
 @media screen and (orientation: portrait) and (max-width: 414px) {
     .hero-text-containter {
         width: 90%;
@@ -520,13 +533,11 @@ button {
     } 
 
     h1.hero-title, p.hero-text-small {
+        display: inline-block;
+        text-align: center;
         width: 90%;
      }
     
-    h1 {
-        font-size: 2.8rem;
-    }
-
     p.hero-text-small {
         font-size: 1.6rem;
         line-height: 2rem;
@@ -880,7 +891,7 @@ p.item-description {
     border-bottom: 1px solid rgb(240, 240, 240);
     transition: .4s;
     overflow: hidden;
-    padding: 16px 32px 16px 37px;
+    padding: 16px 32px 16px 36px;
   }
 
 button.menu-pricing-accordion-categorie h3 {
@@ -968,7 +979,7 @@ section.contact {
 
 iframe.contact-map {
     transform: scale(0);
-    transition: 1.5s;
+    transition: transform 1s;
     /* transform do animacji */
 }
 
@@ -1217,38 +1228,6 @@ textarea:focus {
         margin: 16px auto;
     }
 }
-
-/* @media screen and (max-width: 768px) and (orientation: portrait) 
-{
-    .contact-icons-inside-wrapper {
-        flex-wrap: wrap;
-    }
-    .contact-text-inside-wrapper p {
-        flex-basis: 100%;
-        margin: 10px 0;
-    }
-    .contact-text-inside-wrapper p > * {
-        display: inline-block;
-    }
-
-    .contact-text-inside-wrapper p > span:nth-of-type(1) {
-        display: none;
-    }
-    .contact-icons-inside-wrapperp {
-        text-align: left;
-    }
-
-    .contact-icons-inside-wrapper p:nth-of-type(1),
-    .contact-icons-inside-wrapperp:nth-of-type(2)  {
-        border-right: none;
-    }
-
-    .contact-text p i {
-        margin-right: 24px;
-        vertical-align: -4px;;
-    }
-
-} */
 
 /* CONTACT FORM - end */
 /* CONTACT - end */
