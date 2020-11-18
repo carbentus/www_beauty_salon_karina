@@ -127,11 +127,12 @@ const onTabClick = (event) => {
     panel.style.maxHeight = panel.scrollHeight + "px";
   }
 
+  const headerHeight = document.querySelector("div.header-fixed").clientHeight;
   $("body, html").animate(
     {
-      scrollTop: $(clickedTab).offset().top - 70,
+      scrollTop: $(clickedTab).offset().top - headerHeight,
     },
-    500
+    700
   );
 };
 
