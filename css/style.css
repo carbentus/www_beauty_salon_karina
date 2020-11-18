@@ -289,6 +289,12 @@ text-transform: uppercase;
 }
 }
 
+@media screen and (max-width: 834px){
+    nav .logo-wrapper img{
+        width: 45%;
+    }
+}
+
 @media screen and (orientation: portrait) and (max-width: 768px)
 {
     nav .logo-wrapper img{
