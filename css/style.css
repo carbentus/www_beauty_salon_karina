@@ -595,6 +595,9 @@ button {
 
 
 /* Services description */
+.services{
+    overflow-x: hidden;
+}
 
 .service {
     display: flex;
@@ -1234,31 +1237,17 @@ textarea:focus {
     .contact-form {
         width: 100%;
     }
-
-    /* .contact-text-inside-wrapper{
-    margin-bottom: 24px;
-    } */
-
-    /* .contact-icons-inside-wrapper{
-        text-align: center;
-    }     */
-
-    /* .contact-text p span{
-        margin-left: 0;
-    }
-
-    .contact-icons-inside-wrapper i{
-        display: block;
-        margin-right: 0;
-    } */
-
-    /* .contact-form input.send{
-        margin: 16px auto;
-    } */
 }
 
 
-@media screen and (max-width: 375px) and (orientation: portrait) 
+@media screen and (max-width: 400px) and (orientation: portrait) 
+{
+    .contact-icons-inside-wrapper a.contact-email{
+        font-size: 1.5rem;
+    } 
+}
+
+@media screen and (max-width: 380px) and (orientation: portrait) 
 {
     .contact-text-inside-wrapper{
         margin-bottom: 24px;
