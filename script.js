@@ -1,18 +1,17 @@
-// ----------- Pricelist display
-
 const $ = window.jQuery;
 
+// ----------- Pricelist display
 $('.pricing-categories>div').on('click', function () {
   if ($(this).hasClass('active')) {
-  } else {
-    $('.pricing-categories>div').removeClass('active');
-    $('.pricing-list-items').removeClass('active');
-
-    activeCategoryClass = this.className;
-    console.log(this.className);
-    $(this).addClass('active');
-    $(`.pricing-list-items.${activeCategoryClass}`).addClass('active');
+    return;
   }
+  $('.pricing-categories>div').removeClass('active');
+  $('.pricing-list-items').removeClass('active');
+
+  const activeCategoryClass = this.className;
+  console.log(this.className);
+  $(this).addClass('active');
+  $(`.pricing-list-items.${activeCategoryClass}`).addClass('active');
 });
 
 // book-a-visit  button   (Afspraak Maken)
@@ -92,7 +91,7 @@ const onTabClick = (event) => {
   const clickedTab = event.currentTarget;
 
   [].forEach.call(acc, (tab, i) => {
-    if (tab != clickedTab) {
+    if (tab !== clickedTab) {
       panels[i].style.maxHeight = null;
       panels[i].style.display = 'none';
       panels[i].previousElementSibling.classList.remove('active');
@@ -145,6 +144,7 @@ const toggleNav = () => {
     // close nav
     nav.classList.remove('nav-active');
     navLinks.forEach((link) => {
+      // eslint-disable-next-line no-param-reassign
       link.style.animation = '';
     });
     burger.classList.remove('active');
@@ -154,6 +154,7 @@ const toggleNav = () => {
   // open nav
   nav.classList.add('nav-active');
   navLinks.forEach((link, index) => {
+    // eslint-disable-next-line no-param-reassign
     link.style.animation = `navLinkFade 0.5s ease forwards ${index / 15 + 0.2}s`;
   });
   burger.classList.add('active');

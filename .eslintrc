@@ -6,27 +6,21 @@
     "node": true
   },
   "extends": [
-    "plugin:prettier/recommended",
-    "airbnb/base"
+    "airbnb/base",
+    "prettier",
+    "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 6
   },
   "plugins": ["prettier"],
   "rules": {
-    "arrow-body-style": "off",
-    "arrow-parens": "warn",
-    "consistent-return": "warn",
-    "global-require": "off",
-    "import/newline-after-import": "warn",
-    "linebreak-style": "off",
-    "max-len": "warn",
-    "no-mixed-operators": "off",
-    "no-plusplus": "off",
-    "no-restricted-properties": "warn",
-    "no-underscore-dangle": "warn",
-    "no-useless-escape": "warn",
-    "semi": "warn",
-    "space-before-function-paren": "off"
+    "class-methods-use-this": "off",
+    "func-names": "off",
+    "no-console": "off",
+    "no-process-exit": "off",
+    "no-unused-vars": "warn",
+    "object-shorthand": "off",
+    "prettier/prettier": "error"
   }
 }
