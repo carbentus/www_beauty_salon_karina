@@ -301,8 +301,9 @@ text-transform: uppercase;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      flex-grow: 1;
+      /* flex-grow: 1; */
       margin-bottom: 3vh;
+      margin-top: auto;
       padding: 0;
   }  
 
