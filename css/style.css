@@ -160,6 +160,7 @@ nav .logo-wrapper img{
     cursor: pointer;
     background-color: transparent;
     border: none;
+    outline: 0;
     padding: 8px 16px;
 }
 
@@ -213,13 +214,13 @@ nav .logo-wrapper img{
 .nav-links {
     /* align-items: stretch; */
     background-color: white;
-    display: flex;
+    display: flex;  
     flex-direction: column;
-    height: calc(100vh - 44px);
+    height: calc(100% - 44px);
     justify-content: flex-start;
     overflow-y: auto;
     overflow-x: hidden;
-    position: absolute;
+    position: fixed;
     right: calc(-450px - 5vw);
     top: 44px;
     transform: translateX(0);
@@ -289,7 +290,7 @@ text-transform: uppercase;
   
   .nav-links li a.menu-manicure {
     padding-bottom:0;
-    margin-bottom: 16px;;
+    margin-bottom: 16px;
   }
 
 
