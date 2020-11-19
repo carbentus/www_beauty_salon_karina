@@ -52,7 +52,7 @@ body {
 }
 
 
-p {
+p{
     font-size: 1.6rem;
 }
 
@@ -909,7 +909,6 @@ p.item-description {
 /* Pricelist - ACCORDION  start */
 
 .menu-pricing-accordion.wrapper{
-    /* border: 2px solid blue; */
     display:none;
 }
 .menu-pricing-accordion-categorie{
@@ -1089,10 +1088,11 @@ iframe.contact-map.active {
 
 /* CONTACT FORM - start */
 
-.contact-form p {
+.contact-form label {
     color: #444444;
     display: inline-block;
     font-family: "Lato";
+    font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: 1.51px;
     line-height: 25px;

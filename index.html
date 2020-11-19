@@ -476,18 +476,20 @@
             <div class="contact-form">
                 <form action="https://mailthis.to/karinad89@gmail.com" method="POST">
                 <!-- <div class="contact-form-wrapper-form-one"> -->
-                    <p>Naam</p>
-                    <input type="text">
-                    <p>E-mail</p>
-                    <input type="email">
+                    <!-- <p>Naam</p> -->
+                    <label for="name">Name</label>
+                    <input type="text" required>
+                    
+                    <label for="email">E-mail</label>
+                    <input type="email" required>
                 <!-- </div> -->
                 <!-- <div class="contact-form-wrapper-form-two"> -->
-                    <p>Vraag of opmerking</p>
+                    <label for="message">Vraag of opmerking</label>
                     <textarea></textarea>
-                    <input type="submit" value="Versturen" class="send">
+                    <input type="submit" value="Versturen" class="send" required>
                 <!-- </div> -->
 
-                    <!-- <input type="hidden" name="_confirmation" value="Wysłąłeś maila! jupi"> -->
+                    <!-- <input type="hidden" name="_confirmation" value="Wysłąłeś maila! "> -->
                     <!-- <input type="hidden" name="_after" value="http://www.schoonheidsbehandelingen.be/"> -->
                     <!-- <button class="send">Versturen</button> -->
                 </form>

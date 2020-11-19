@@ -173,7 +173,11 @@ burger.addEventListener("click", () => {
 
 // ----------- Click on NAV --> SCROLL  to section  -- JQ --
 var throttleTimeout = 0;
-$("nav ul li a").on("click", function (ev) {
+// var navSelectors = document.querySelectorAll("nav ul li a:not([.menu-number])")
+
+
+// $("nav ul li a").on("click", function (ev) {
+  $("nav ul li a").not(".menu-number").on("click", function (ev) {
   ev.preventDefault();
   clearTimeout(throttleTimeout);
  
@@ -185,7 +189,7 @@ $("nav ul li a").on("click", function (ev) {
   {    
     const goToSection = "[data-section=" + $(this).attr("class") + "]";
     const headerHeight = document.querySelector("div.header-fixed").clientHeight -1;
-    
+        
     $("body, html").animate(
       {
         scrollTop: $(goToSection).offset().top - headerHeight,
