@@ -110,7 +110,7 @@ nav .logo-wrapper img{
 .nav-links li{
     list-style: none;
     position: relative;
-    overflow: hidden;
+    /* overflow:hidden */
     margin:0 16px;
 }
 
@@ -125,12 +125,13 @@ nav .logo-wrapper img{
 
 .nav-links li a {
     display: block;
+    font-size: 1.6rem;
     text-decoration: none;
     color: black;
-    font-size: 1.6rem;
+    cursor: pointer;
     font-weight: 500px;
     padding: 5px 0;
-    cursor: pointer;
+   
 }
 
 .nav-links li.menu-contact{
@@ -962,8 +963,9 @@ transform: rotate(180deg);
 }
 
 .accordion-pricing-list-item{
-   display: flex;
-   flex-wrap: wrap;
+    flex-wrap: wrap;
+    display: flex;
+  
    justify-content: space-between;
    flex-basis:100%;
    margin: 16px 0;

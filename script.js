@@ -1,4 +1,4 @@
-// ----------- Pricelist display
+// ----------- Pricelist (desktop) display
 
 $(".pricing-categories>div").on("click", function () {
   if ($(this).hasClass("active")) {
@@ -20,13 +20,13 @@ $(".book-a-visit").on("click", function () {
 
   $("body, html").animate(
     {
-      scrollTop: $('[data-section="menu-contact"]').offset().top - 85,
+      scrollTop: $('[data-section="menu-contact"]').offset().top - 70,
     },
     600
   );
 });
 
-// Animation, scroll
+// Animation on scroll
 
 const $serviceWaxing = $(".services .service.waxing");
 const $serviceFace = $(".services .service.face");
@@ -89,8 +89,7 @@ $(document).on("scroll", function () {
   }
 });
 
-// ----- ACCORDION  Pricelist
-
+// ----- ACCORDION  Pricelist (mobile)
 // acc= clickable caterogry line
 const acc = document.querySelectorAll(".menu-pricing-accordion-categorie");
 const panels = document.querySelectorAll(".accordion-pricing-list-items");
@@ -132,14 +131,13 @@ const onTabClick = (event) => {
     {
       scrollTop: $(clickedTab).offset().top - headerHeight,
     },
-    600
+    500
   );
 };
 
 [].forEach.call(acc, (tab) => {
   tab.addEventListener("click", onTabClick);
 });
-
 
 // Toggle menu
 const nav = document.querySelector(".nav-links");
@@ -162,13 +160,13 @@ const toggleNav = () => {
   // open nav
   nav.classList.add("nav-active");
   navLinks.forEach((link, index) => {
-  link.style.animation = `navLinkFade 0.5s ease forwards ${index / 15 + 0.2}s`;
+    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 15 + 0.2}s`;
   });
   burger.classList.add("active");
 };
 
 burger.addEventListener("click", () => {
-    toggleNav();
+  toggleNav();
 });
 
 // ----------- Click on NAV --> SCROLL  to section  -- JQ --
@@ -177,24 +175,23 @@ var throttleTimeout = 0;
 
 
 // $("nav ul li a").on("click", function (ev) {
-  $("nav ul li a").not(".menu-number").on("click", function (ev) {
+$("nav ul li a").not(".menu-number").on("click", function (ev) {
   ev.preventDefault();
   clearTimeout(throttleTimeout);
- 
-  if (burger.classList.contains("active")){
-    toggleNav();
-  }  
 
-  throttleTimeout = setTimeout(() => 
-  {    
+  if (burger.classList.contains("active")) {
+    toggleNav();
+  }
+
+  throttleTimeout = setTimeout(() => {
     const goToSection = "[data-section=" + $(this).attr("class") + "]";
-    const headerHeight = document.querySelector("div.header-fixed").clientHeight -1;
-        
+    const headerHeight = document.querySelector("div.header-fixed").clientHeight - 1;
+
     $("body, html").animate(
       {
         scrollTop: $(goToSection).offset().top - headerHeight,
       },
-      700
+      400
     );
   }, 100);
 });
