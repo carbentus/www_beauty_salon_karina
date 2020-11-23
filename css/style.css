@@ -110,7 +110,7 @@ nav .logo-wrapper img{
 .nav-links li{
     list-style: none;
     position: relative;
-    /* overflow:hidden */
+    overflow: hidden;
     margin:0 16px;
 }
 
@@ -239,6 +239,7 @@ nav .logo-wrapper img{
 
 .nav-links li{
     opacity: 0;
+    overflow: visible;
 }
 
 .nav-links li:nth-child(1),
