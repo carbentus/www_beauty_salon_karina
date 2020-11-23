@@ -157,31 +157,30 @@ const toggleNav = () => {
     link.style.animation = `navLinkFade 0.5s ease forwards ${index / 15 + 0.2}s`;
   });
   burger.classList.add('active');
-  ;
+};
+burger.addEventListener('click', () => {
+  toggleNav();
+});
 
-  burger.addEventListener('click', () => {
+// ----------- Click on NAV-- > SCROLL  to section-- JQ--
+var throttleTimeout = 0;
+$('nav ul li a').not('.menu-number').on('click', function (ev) {
+  ev.preventDefault();
+  clearTimeout(throttleTimeout);
+
+  if (burger.classList.contains('active')) {
     toggleNav();
-  });
+  }
 
-  ----------- Click on NAV-- > SCROLL  to section-- JQ--
-  var throttleTimeout = 0;
-  $('nav ul li a').not('.menu-number').on('click', function (ev) {
-    ev.preventDefault();
-    clearTimeout(throttleTimeout);
+  throttleTimeout = setTimeout(() => {
+    const goToSection = `[data-section=${$(this).attr('class')}]`;
+    const headerHeight = document.querySelector('div.header-fixed').clientHeight - 1;
 
-    if (burger.classList.contains('active')) {
-      toggleNav();
-    }
-
-    throttleTimeout = setTimeout(() => {
-      const goToSection = `[data-section=${$(this).attr('class')}]`;
-      const headerHeight = document.querySelector('div.header-fixed').clientHeight - 1;
-
-      $('body, html').animate(
-        {
-          scrollTop: $(goToSection).offset().top - headerHeight,
-        },
-        600
-      );
-    }, 100);
-  });
+    $('body, html').animate(
+      {
+        scrollTop: $(goToSection).offset().top - headerHeight,
+      },
+      600
+    );
+  }, 100);
+});
