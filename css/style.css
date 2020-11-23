@@ -951,6 +951,7 @@ span.arrow {
 span.arrow.active {
 transform: rotate(180deg);
 }
+
 .accordion-pricing-list-items{
     background-color: #F7F7F7;
     border-left: 3px solid #B89288;
