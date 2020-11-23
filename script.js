@@ -163,7 +163,7 @@ const toggleNav = () => {
     toggleNav();
   });
 
-  ----------- Click on NAV-- > SCROLL  to section-- JQ--
+  // ----------- Click on NAV-- > SCROLL  to section-- JQ--
   var throttleTimeout = 0;
   $('nav ul li a').not('.menu-number').on('click', function (ev) {
     ev.preventDefault();
