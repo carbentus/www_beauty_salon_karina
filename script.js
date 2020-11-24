@@ -177,3 +177,16 @@ $('nav ul li a').not('.menu-number').on('click', function (ev) {
     );
   }, 100);
 });
+
+// Close Burger menu on resize 
+
+window.addEventListener("resize", () => {
+  var newWidth = window.innerWidth;
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav-links');
+
+  if ((newWidth > 1024) && (burger.classList.contains('active'))) {
+    burger.classList.remove('active');
+    nav.classList.remove('nav-active');
+  }
+});
