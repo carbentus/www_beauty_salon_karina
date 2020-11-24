@@ -1150,7 +1150,6 @@ iframe.contact-map {
     text-transform: uppercase;
     transition: background-color .4s ;
     width: auto;
-    cursor: not-allowed;
 }
 
 button.book-a-visit:hover,

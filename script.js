@@ -60,8 +60,8 @@ $(document).on('scroll', function () {
   if (scrollValue > serviceWaxingFromTop + serviceWaxingHeight / 3 - windowHeight) {
     $serviceWaxing.addClass('active');
 
-    console.log("Waxing from top" + (serviceWaxingFromTop));
-    console.log("scroll value for Waxing  " + (serviceWaxingFromTop + serviceWaxingHeight / 3 - windowHeight));
+    // console.log("Waxing from top" + (serviceWaxingFromTop));
+    // console.log("scroll value for Waxing  " + (serviceWaxingFromTop + serviceWaxingHeight / 3 - windowHeight));
   }
 
   if (scrollValue > serviceFaceFromTop + serviceFaceHeight / 3 - windowHeight) {
@@ -191,13 +191,7 @@ window.addEventListener("resize", () => {
   }
 });
 
-// RECAPTCHA Callback (when the recaptcha is checked)
-
-function recaptcha_callback() {
-  var registerBtn = document.querySelector('input.send');
-  registerBtn.removeAttribute('disabled');
-  registerBtn.style.cursor = 'pointer';
-}
+// RECAPTCHA alert (when the recaptcha is not checked)
 
 var form = document.getElementById('form');
 form.addEventListener("submit", function (event) {
