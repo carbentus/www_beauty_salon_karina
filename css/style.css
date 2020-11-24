@@ -1123,10 +1123,12 @@ iframe.contact-map {
     resize: vertical;
 }
 
-.contact-form div.g-recaptcha{
+.contact-form .recaptcha-robot{
     margin-top: 16px;
-    transform: scale(1);
-    transform-origin:0 0;
+}
+
+.contact-form div.g-recaptcha > div{
+    width: auto !important;
 }
 
 
@@ -1148,6 +1150,7 @@ iframe.contact-map {
     text-transform: uppercase;
     transition: background-color .4s ;
     width: auto;
+    cursor: not-allowed;
 }
 
 button.book-a-visit:hover,
@@ -1240,9 +1243,13 @@ textarea:focus {
     .contact-form {
         width: 100%;
     }
+    
+    .contact-form .recaptcha-robot{
+        text-align: center;
+    }
 
     .contact-form div.g-recaptcha{
-        transform: scale(0.9);
+        transform: scale(0.95);
         transform-origin:0 0;
     }
 }
@@ -1281,9 +1288,13 @@ textarea:focus {
         margin: 16px auto;
     }
     
+    .contact-form .recaptcha-robot{
+        text-align: center;
+    }
     .contact-form div.g-recaptcha{
-        transform: scale(0.95);
-        transform-origin:0 0;
+        width: auto !important;
+        /* transform: scale(0.6);
+        transform-origin:0 0; */
     }
 
 }

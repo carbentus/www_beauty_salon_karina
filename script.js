@@ -190,3 +190,11 @@ window.addEventListener("resize", () => {
     nav.classList.remove('nav-active');
   }
 });
+
+// RECAPTCHA Callback
+
+function recaptcha_callback() {
+  var registerBtn = document.querySelector('input.send');
+  registerBtn.removeAttribute('disabled');
+  registerBtn.style.cursor = 'pointer';
+}
