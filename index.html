@@ -14,11 +14,11 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
-
+    <!-- HEADER NAV -->
     <div class="header-fixed">
         <header>
             <nav>
@@ -49,6 +49,7 @@
             </nav>
         </header>
     </div>
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-text-containter">
             <h1 class="hero-title">Welkom bij Karina Schoonheidssalon Antwerpen (Wilrijk)</h1>
@@ -108,7 +109,6 @@
     </section>
 
     <!-- PRICING -->
-
     <section data-section="menu-pricing" class="pricing">
         <h2 class="h2-price-contact">Prijslist <span></span></h2>
         <div class="menu-pricing-standard wrapper">
@@ -503,7 +503,12 @@
                     <!-- <div class="contact-form-wrapper-form-two"> -->
                     <label for="message">Vraag of opmerking</label>
                     <textarea></textarea>
+                    <div class="recaptcha-robot">
+                        <div class="g-recaptcha" data-sitekey="6LdgTesZAAAAAI_wXUMMB_gMP-x0VjBi3NwJEXQN"
+                            data-theme="clean"></div>
+                    </div>
                     <input type="submit" value="Versturen" class="send" required>
+
                     <!-- </div> -->
 
                     <!-- <input type="hidden" name="_confirmation" value="Wysłąłeś maila! "> -->
@@ -522,8 +527,15 @@
 
 
     <!-- **************  JS   **************  -->
+
+
+
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+    </script>
     <script src="jquery-3.4.1.min.js"></script>
     <script src="script.js"></script>
+
+
 </body>
 
 </html>

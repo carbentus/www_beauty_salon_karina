@@ -1123,6 +1123,13 @@ iframe.contact-map {
     resize: vertical;
 }
 
+.contact-form div.g-recaptcha{
+    margin-top: 16px;
+    transform: scale(1);
+    transform-origin:0 0;
+}
+
+
 /* .contact-form button.send */
 .contact-form input.send {
     display: block;
@@ -1233,6 +1240,11 @@ textarea:focus {
     .contact-form {
         width: 100%;
     }
+
+    .contact-form div.g-recaptcha{
+        transform: scale(0.9);
+        transform-origin:0 0;
+    }
 }
 
 
@@ -1267,6 +1279,11 @@ textarea:focus {
 
     .contact-form input.send{
         margin: 16px auto;
+    }
+    
+    .contact-form div.g-recaptcha{
+        transform: scale(0.95);
+        transform-origin:0 0;
     }
 
 }
