@@ -16,8 +16,6 @@ $('.pricing-categories>div').on('click', function () {
 // book-a-visit  button   (Afspraak Maken)
 
 $('.book-a-visit').on('click', () => {
-  console.log('klik działa');
-
   $('body, html').animate(
     {
       scrollTop: $('[data-section="menu-contact"]').offset().top - 70,
@@ -40,8 +38,6 @@ let serviceFaceFromTop;
 let serviceFaceHeight;
 let serviceManicureFromTop;
 let serviceManicureHeight;
-let serviceContactMapFromTop;
-let serviceContactMapHeight;
 
 const onResize = function onDocumentResize() {
   //   console.log("resize");
@@ -52,19 +48,20 @@ const onResize = function onDocumentResize() {
   serviceFaceHeight = $serviceFace.outerHeight();
   serviceManicureFromTop = $serviceManicure.offset().top;
   serviceManicureHeight = $serviceManicure.outerHeight();
-  serviceContactMapFromTop = $serviceContactMap.offset().top;
-  serviceContactMapHeight = $serviceContactMap.outerHeight();
 };
 
 onResize();
 $(window).resize(onResize);
 
 $(document).on('scroll', function () {
-  //   console.log("scroll");
   const scrollValue = $(this).scrollTop();
+
 
   if (scrollValue > serviceWaxingFromTop + serviceWaxingHeight / 3 - windowHeight) {
     $serviceWaxing.addClass('active');
+
+    console.log("Waxing from top" + (serviceWaxingFromTop));
+    console.log("scroll value for Waxing  " + (serviceWaxingFromTop + serviceWaxingHeight / 3 - windowHeight));
   }
 
   if (scrollValue > serviceFaceFromTop + serviceFaceHeight / 3 - windowHeight) {
@@ -73,10 +70,6 @@ $(document).on('scroll', function () {
 
   if (scrollValue > serviceManicureFromTop + serviceManicureHeight / 3 - windowHeight) {
     $serviceManicure.addClass('active');
-  }
-
-  if (scrollValue > serviceContactMapFromTop + serviceContactMapHeight / 2 - windowHeight) {
-    $serviceContactMap.addClass('active');
   }
 });
 

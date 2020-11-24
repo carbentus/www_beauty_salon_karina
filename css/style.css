@@ -162,7 +162,7 @@ nav .logo-wrapper img{
     background-color: transparent;
     border: none;
     outline: 0;
-    padding: 8px 16px;
+    padding: 8px 0 8px 16px;
 }
 
 .burger div{
@@ -578,10 +578,7 @@ button {
 }
 
 @media screen and (orientation: portrait) and (max-width: 320px) {
-    /* .hero-text-containter {
-        padding-top: 8%;
-    }  */
-    
+   
     h1 {
         font-size: 2.4rem;
     }
@@ -610,7 +607,7 @@ button {
     margin: 0 auto;
     max-width: 1280px;
     padding: 72px 0;
-    transition: all 1s ease-out;
+    transition: all 1.2s ease-out;
 }
 
 
@@ -620,6 +617,7 @@ button {
 
 section.service-bcg div.service {
     flex-direction: row-reverse;
+    overflow: hidden;
 }
 
 /* ANIMACJA  Start - wjazd elementów */
@@ -1014,18 +1012,10 @@ section.contact {
 }
 
 iframe.contact-map {
-    transform: scale(0);
-    transition: transform 1s;
-    /* transform do animacji */
-}
-
-iframe.contact-map.active {
     height: 370px;
     margin: 0 auto 40px auto;
-    transform: scale(1);
     width: 100%;
 }
-
 .contact-text-wrapper {
     display: flex;
     flex-wrap: wrap;
