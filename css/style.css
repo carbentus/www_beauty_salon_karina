@@ -1287,16 +1287,6 @@ textarea:focus {
     .contact-form input.send{
         margin: 16px auto;
     }
-    
-    .contact-form .recaptcha-robot{
-        text-align: center;
-    }
-    .contact-form div.g-recaptcha{
-        width: auto !important;
-        /* transform: scale(0.6);
-        transform-origin:0 0; */
-    }
-
 }
 
 /* CONTACT FORM - end */
@@ -1323,7 +1313,6 @@ footer p {
 @media screen and (max-width: 1440px) {
     footer p {
         width: 90%;
-    }
 }
 
 @media screen and (max-width: 1100px) {

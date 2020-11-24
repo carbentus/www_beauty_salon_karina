@@ -191,10 +191,19 @@ window.addEventListener("resize", () => {
   }
 });
 
-// RECAPTCHA Callback
+// RECAPTCHA Callback (when the recaptcha is checked)
 
 function recaptcha_callback() {
   var registerBtn = document.querySelector('input.send');
   registerBtn.removeAttribute('disabled');
   registerBtn.style.cursor = 'pointer';
 }
+
+var form = document.getElementById('form');
+form.addEventListener("submit", function (event) {
+  if (grecaptcha.getResponse() === '') {
+    event.preventDefault();
+    alert('Please check the recaptcha');
+  }
+}
+  , false);

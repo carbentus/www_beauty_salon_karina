@@ -491,7 +491,7 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form action="https://mailthis.to/karinad89@gmail.com" method="POST">
+                <form id="form" action="https://mailthis.to/karinad89@gmail.com" method="POST">
                     <!-- <div class="contact-form-wrapper-form-one"> -->
                     <!-- <p>Naam</p> -->
                     <label for="name">Name</label>
@@ -503,9 +503,9 @@
                     <!-- <div class="contact-form-wrapper-form-two"> -->
                     <label for="message">Vraag of opmerking</label>
                     <textarea></textarea>
-                    <div class="recaptcha-robot">
+                    <div class="recaptcha-container">
                         <div class="g-recaptcha" data-sitekey="6LdgTesZAAAAAI_wXUMMB_gMP-x0VjBi3NwJEXQN"
-                        data-callback="recaptcha_callback"></div>
+                            data-callback="recaptcha_callback"></div>
                     </div>
                     <input type="submit" value="Versturen" class="send" required disabled>
 
