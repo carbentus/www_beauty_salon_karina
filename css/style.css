@@ -365,6 +365,17 @@ text-transform: uppercase;
     transform: translateX(-100%);
 }
 
+@-webkit-keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @keyframes navLinkFade{
     from{
         opacity: 0;
@@ -607,7 +618,7 @@ button {
     margin: 0 auto;
     max-width: 1280px;
     padding: 72px 0;
-    transition: all 1s ease-out;
+    transition: all 1.2s ease-out;
 }
 
 
@@ -624,19 +635,19 @@ section.service-bcg div.service {
 .services .service.waxing,
 .services .service.manicure {
     opacity: 0;
-    /* transform: translateX(110vw); */
+    transform: translateX(110vw);
 }
 
 .services .service.face {
     opacity: 0;
-    /* transform: translateX(-110vw); */
+    transform: translateX(-110vw);
 }
 
 .services .service.waxing.active,
 .services .service.manicure.active,
 .services .service.face.active {
     opacity: 1;
-    /* transform: translateX(0); */
+    transform: translateX(0);
 }
 
 /* animacja END */
@@ -1330,4 +1341,4 @@ footer p {
         margin-top: 24px;
     }
     
-}
+}}}
