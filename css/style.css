@@ -712,7 +712,6 @@ section.service-bcg div.service {
 }
 
 /* ANIMACJA  Start - wjazd elementów */
-
 .services .service.waxing,
 .services .service.manicure {
     opacity: 0;
@@ -1434,12 +1433,17 @@ textarea:focus {
     }
     
     .contact-form div.g-recaptcha{
+<<<<<<< HEAD
         -webkit-transform: scale(0.95);
             -ms-transform: scale(0.95);
                 transform: scale(0.95);
         -webkit-transform-origin:0 0;
             -ms-transform-origin:0 0;
                 transform-origin:0 0;
+=======
+        transform: scale(0.95);
+        transform-origin:0 0;
+>>>>>>> 9a15ecfd62df3b52aeaab972436601e7310020e0
     }
 }
 
