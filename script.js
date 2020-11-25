@@ -13,8 +13,8 @@ $('.pricing-categories>div').on('click', function () {
   $(this).addClass('active');
   $(`.pricing-list-items.${activeCategoryClass}`).addClass('active');
 });
-// book-a-visit  button   (Afspraak Maken)
 
+// book-a-visit  button   (Afspraak Maken)
 $('.book-a-visit').on('click', () => {
   $('body, html').animate(
     {
@@ -26,10 +26,10 @@ $('.book-a-visit').on('click', () => {
 
 // Animation on scroll
 
-const $serviceWaxing = $('.services .service.waxing');
-const $serviceFace = $('.services .service.face');
-const $serviceManicure = $('.services .service.manicure');
-const $serviceContactMap = $('.contact-map');
+const serviceWaxing = document.querySelector('.services .service.waxing');
+const serviceFace = document.querySelector('.services .service.face');
+const serviceManicure = document.querySelector('.services .service.manicure');
+const serviceContactMap = document.querySelector('.contact-map');
 
 let windowHeight;
 let serviceWaxingFromTop;
@@ -41,35 +41,32 @@ let serviceManicureHeight;
 
 const onResize = function onDocumentResize() {
   //   console.log("resize");
-  windowHeight = $(window).height();
-  serviceWaxingFromTop = $serviceWaxing.offset().top;
-  serviceWaxingHeight = $serviceWaxing.outerHeight();
-  serviceFaceFromTop = $serviceFace.offset().top;
-  serviceFaceHeight = $serviceFace.outerHeight();
-  serviceManicureFromTop = $serviceManicure.offset().top;
-  serviceManicureHeight = $serviceManicure.outerHeight();
+  // windowHeight = $(window).height();
+  windowHeight = window.innerHeight;
+  serviceWaxingFromTop = serviceWaxing.offsetTop;
+  serviceWaxingHeight = serviceWaxing.offsetHeight;
+  serviceFaceFromTop = serviceFace.offsetTop;
+  serviceFaceHeight = serviceFace.offsetHeight;
+  serviceManicureFromTop = serviceManicure.offsetTop;
+  serviceManicureHeight = serviceManicure.offsetHeight;
 };
 
 onResize();
-$(window).resize(onResize);
+window.addEventListener('resize', onResize);
 
-$(document).on('scroll', function () {
-  const scrollValue = $(this).scrollTop();
+window.addEventListener('scroll', function () {
+  const scrollValue = window.scrollY;
 
-
-  if (scrollValue > serviceWaxingFromTop + serviceWaxingHeight / 3 - windowHeight) {
-    $serviceWaxing.addClass('active');
-
-    console.log("Waxing from top" + (serviceWaxingFromTop));
-    console.log("scroll value for Waxing  " + (serviceWaxingFromTop + serviceWaxingHeight / 3 - windowHeight));
+  if (scrollValue > serviceWaxingFromTop + serviceWaxingHeight / 4 - windowHeight) {
+    serviceWaxing.classList.add('active');
   }
 
-  if (scrollValue > serviceFaceFromTop + serviceFaceHeight / 3 - windowHeight) {
-    $serviceFace.addClass('active');
+  if (scrollValue > serviceFaceFromTop + serviceFaceHeight / 4 - windowHeight) {
+    serviceFace.classList.add('active');
   }
 
-  if (scrollValue > serviceManicureFromTop + serviceManicureHeight / 3 - windowHeight) {
-    $serviceManicure.addClass('active');
+  if (scrollValue > serviceManicureFromTop + serviceManicureHeight / 4 - windowHeight) {
+    serviceManicure.classList.add('active');
   }
 });
 
@@ -190,3 +187,14 @@ window.addEventListener("resize", () => {
     nav.classList.remove('nav-active');
   }
 });
+
+// RECAPTCHA alert (when the recaptcha is not checked)
+
+var form = document.getElementById('form');
+form.addEventListener("submit", function (event) {
+  if (grecaptcha.getResponse() === '') {
+    event.preventDefault();
+    alert('Please check the recaptcha');
+  }
+}
+  , false);
