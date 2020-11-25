@@ -13,8 +13,8 @@ $('.pricing-categories>div').on('click', function () {
   $(this).addClass('active');
   $(`.pricing-list-items.${activeCategoryClass}`).addClass('active');
 });
-// book-a-visit  button   (Afspraak Maken)
 
+// book-a-visit  button   (Afspraak Maken)
 $('.book-a-visit').on('click', () => {
   $('body, html').animate(
     {
