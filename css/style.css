@@ -1123,7 +1123,7 @@ iframe.contact-map {
     resize: vertical;
 }
 
-.contact-form .recaptcha-robot{
+.contact-form .recaptcha-container{
     margin-top: 16px;
 }
 
@@ -1169,9 +1169,7 @@ textarea:focus {
     section.contact {
         width: 90%;
     }
-
 }
-/* contact - media 1440 - END */
 
 @media screen and (max-width: 1024px) {
     .contact-text-wrapper {
@@ -1205,6 +1203,12 @@ textarea:focus {
     }
 }
 
+
+@media screen and (max-width: 930px){
+    .contact-icons-inside-wrapper a.contact-email{
+        font-size: 1.4rem;
+    }  
+
  @media screen and (orientation: portrait) and (max-width: 834px) {
     .contact-text, 
     .contact-form {
@@ -1231,6 +1235,10 @@ textarea:focus {
         margin-left: 33px;
     }
 
+    .contact-icons-inside-wrapper a.contact-email{
+        font-size: 1.6rem;
+    }  
+
     .contact-form input.send {
         margin: 16px 0;
     }
@@ -1243,10 +1251,6 @@ textarea:focus {
         width: 100%;
     }
     
-    .contact-form .recaptcha-robot{
-        text-align: center;
-    }
-
     .contact-form div.g-recaptcha{
         transform: scale(0.95);
         transform-origin:0 0;
