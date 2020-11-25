@@ -29,7 +29,6 @@ $('.book-a-visit').on('click', () => {
 const serviceWaxing = document.querySelector('.services .service.waxing');
 const serviceFace = document.querySelector('.services .service.face');
 const serviceManicure = document.querySelector('.services .service.manicure');
-const serviceContactMap = document.querySelector('.contact-map');
 
 let windowHeight;
 let serviceWaxingFromTop;
