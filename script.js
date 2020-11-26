@@ -195,6 +195,7 @@ form.addEventListener('submit', function (event) {
   if (grecaptcha.getResponse() === '') {
     event.preventDefault();
     alert('Please check the recaptcha');
+    Recaptcha.reload();
   }
 }
   , false);
@@ -220,13 +221,13 @@ window.addEventListener("DOMContentLoaded", function () {
     form.reset();
     status.classList.add("success");
     status.innerHTML = "Bedankt, uw bericht is met succes verzonden!";
-    grecaptcha.reset();
+    Recaptcha.reload();
   }
 
   function error() {
     status.classList.add("error");
     status.innerHTML = "Ooops! Er is iets misgegaan. Probeer het bericht opnieuw te versturen of neem telefonisch contact met ons op.";
-    grecaptcha.reset();
+    Recaptcha.reload();
   }
 
   // handle the form submission event

@@ -494,13 +494,13 @@
                 <form id="my-form" action="https://formspree.io/f/mvovbkeo" method="POST">
 
                     <label for="name">Name</label>
-                    <input name="name" type="text">
+                    <input name="name" type="text" required>
 
                     <label for="email">E-mail</label>
-                    <input name="email" type="email">
+                    <input name="email" type="email" required>
 
                     <label for="message">Vraag of opmerking</label>
-                    <textarea name="message"></textarea>
+                    <textarea name="message" required></textarea>
 
                     <div class="recaptcha-container">
                         <div class="g-recaptcha" data-sitekey="6LdgTesZAAAAAI_wXUMMB_gMP-x0VjBi3NwJEXQN"></div>
@@ -523,8 +523,6 @@
     </script>
     <script src="jquery-3.4.1.min.js"></script>
     <script src="script.js"></script>
-
-
 </body>
 
 </html>
