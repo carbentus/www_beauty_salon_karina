@@ -220,11 +220,13 @@ window.addEventListener("DOMContentLoaded", function () {
     form.reset();
     status.classList.add("success");
     status.innerHTML = "Bedankt, uw bericht is met succes verzonden!";
+    grecaptcha.reset();
   }
 
   function error() {
     status.classList.add("error");
     status.innerHTML = "Ooops! Er is iets misgegaan. Probeer het bericht opnieuw te versturen of neem telefonisch contact met ons op.";
+    grecaptcha.reset();
   }
 
   // handle the form submission event
