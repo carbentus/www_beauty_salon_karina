@@ -198,3 +198,7 @@ form.addEventListener("submit", function (event) {
   }
 }
   , false);
+
+var onloadCallback = function () {
+//   alert("grecaptcha is ready!");
+};

@@ -79,7 +79,7 @@ div.header-fixed {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 
 header {
@@ -235,7 +235,10 @@ nav .logo-wrapper img{
     nav .logo-wrapper img{
         width: 40%;
     }
-  
+    /* div.header-fixed {
+        box-shadow: none;
+    } */
+
 .nav-links {
     /* align-items: stretch; */
     background-color: white;
@@ -246,6 +249,8 @@ nav .logo-wrapper img{
     -webkit-box-direction: normal;  
         -ms-flex-direction: column;  
             flex-direction: column;
+    /* -webkit-box-shadow: 0px -2px 5px 0px rgb(146, 144, 144); */
+            box-shadow: 1px 1px 5px -1px rgb(146, 144, 144);
     height: calc(100% - 44px);
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -255,6 +260,7 @@ nav .logo-wrapper img{
     position: fixed;
     right: calc(-450px - 5vw);
     top: 44px;
+    
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0);
@@ -264,7 +270,7 @@ nav .logo-wrapper img{
     transition: transform .5s ease-in;
     transition: transform .5s ease-in, -webkit-transform .5s ease-in;
     width: 450px;
-    z-index: -1;
+
 }   
 
 .nav-links li:nth-child(1){
@@ -1385,7 +1391,8 @@ textarea:focus {
 @media screen and (max-width: 930px){
     .contact-icons-inside-wrapper a.contact-email{
         font-size: 1.4rem;
-    }  
+    }
+} 
 
  @media screen and (orientation: portrait) and (max-width: 834px) {
     .contact-text, 
@@ -1433,23 +1440,13 @@ textarea:focus {
     }
     
     .contact-form div.g-recaptcha{
-<<<<<<< HEAD
-        -webkit-transform: scale(0.95);
             -ms-transform: scale(0.95);
                 transform: scale(0.95);
         -webkit-transform-origin:0 0;
             -ms-transform-origin:0 0;
                 transform-origin:0 0;
-=======
-        transform: scale(0.95);
-        transform-origin:0 0;
->>>>>>> 9a15ecfd62df3b52aeaab972436601e7310020e0
     }
-}
 
-
-@media screen and (max-width: 400px) and (orientation: portrait) 
-{
     .contact-icons-inside-wrapper a.contact-email{
         font-size: 1.5rem;
     } 
@@ -1489,7 +1486,7 @@ textarea:focus {
 /* FOOTER */
 footer {
     background-color: #221E1F;
-    height: 10vh;
+    height: 8vh;
     margin-top: 56px;
 }
 
@@ -1506,6 +1503,7 @@ footer p {
 @media screen and (max-width: 1440px) {
     footer p {
         width: 90%;
+    }
 }
 
 @media screen and (max-width: 1100px) {
@@ -1520,4 +1518,4 @@ footer p {
         margin-top: 24px;
     }
     
-}}}
+}
