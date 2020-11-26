@@ -1327,6 +1327,40 @@ iframe.contact-map {
     width: auto;
 }
 
+#form-status {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  margin: 16px auto 32px;
+  border-radius: 2px;
+  font-size: 1.6rem;
+}
+#form-status.success {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  animation: status 8s ease forwards;
+}
+#form-status.error {
+  background-color: #FFBABA;
+  color: #D8000C;
+  animation: status 8s ease forwards;
+}
+@keyframes status {
+  0% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  90% {
+    opacity: 1;
+    pointer-events: all;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+
 button.book-a-visit:hover,
 input.send:hover {
     background-color: #ccb0ab;
@@ -1487,7 +1521,6 @@ textarea:focus {
 footer {
     background-color: #221E1F;
     height: 8vh;
-    margin-top: 56px;
 }
 
 footer p {
