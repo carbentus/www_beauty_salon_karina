@@ -1331,19 +1331,19 @@ iframe.contact-map {
   width: 100%;
   text-align: center;
   padding: 10px;
-  margin: 16px auto 32px;
+  margin: 16px auto;
   border-radius: 2px;
   font-size: 1.6rem;
 }
 #form-status.success {
   color: #4F8A10;
   background-color: #DFF2BF;
-  animation: status 8s ease forwards;
+  animation: status 7s ease forwards;
 }
 #form-status.error {
   background-color: #FFBABA;
   color: #D8000C;
-  animation: status 8s ease forwards;
+  animation: status 7s ease forwards;
 }
 @keyframes status {
   0% {
@@ -1401,6 +1401,14 @@ textarea:focus {
         padding-right: 0;
         width: 100%;
     }
+
+    .contact-form {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+
 
     form {
         width: 100%;
