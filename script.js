@@ -16,10 +16,9 @@ $('.pricing-categories>div').on('click', function () {
 
 // book-a-visit  button   (Afspraak Maken)
 $('.book-a-visit').on('click', () => {
-  $('body, html').animate(
-    {
-      scrollTop: $('[data-section="menu-contact"]').offset().top - 70,
-    },
+  $('body, html').animate({
+    scrollTop: $('[data-section="menu-contact"]').offset().top - 70,
+  },
     600
   );
 });
@@ -108,10 +107,9 @@ const onTabClick = (event) => {
   }
 
   const headerHeight = document.querySelector('div.header-fixed').clientHeight;
-  $('body, html').animate(
-    {
-      scrollTop: $(clickedTab).offset().top - headerHeight,
-    },
+  $('body, html').animate({
+    scrollTop: $(clickedTab).offset().top - headerHeight,
+  },
     500
   );
 };
@@ -166,10 +164,9 @@ $('nav ul li a').not('.menu-number').on('click', function (ev) {
     const goToSection = `[data-section=${$(this).attr('class')}]`;
     const headerHeight = document.querySelector('div.header-fixed').clientHeight - 1;
 
-    $('body, html').animate(
-      {
-        scrollTop: $(goToSection).offset().top - headerHeight,
-      },
+    $('body, html').animate({
+      scrollTop: $(goToSection).offset().top - headerHeight,
+    },
       600
     );
   }, 100);
@@ -177,7 +174,7 @@ $('nav ul li a').not('.menu-number').on('click', function (ev) {
 
 // Close Burger menu on resize 
 
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   var newWidth = window.innerWidth;
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav-links');
@@ -188,51 +185,27 @@ window.addEventListener("resize", () => {
   }
 });
 
-// RECAPTCHA alert (when the recaptcha is not checked)
-
-var form = document.getElementById('my-form');
-form.addEventListener('submit', function (event) {
-  if (grecaptcha.getResponse() === '') {
-    event.preventDefault();
-    alert('Please check the recaptcha');
-    Recaptcha.reload();
-  }
-}
-  , false);
-
-var onloadCallback = function () {
-  //   alert("grecaptcha is ready!");
-};
-
-
 // ****** EMAIL ****** FORMSPREE
 
-window.addEventListener("DOMContentLoaded", function () {
+window.addEventListener('DOMContentLoaded', function () {
 
-  // get the form elements defined in your form HTML above
-
-  var form = document.getElementById("my-form");
-  // var button = document.getElementById("my-form-button");
-  var status = document.getElementById("form-status");
+  var form = document.getElementById('my-form');
+  var status = document.getElementById('form-status');
 
   // Success and Error functions for after the form is submitted
-
   function success() {
     form.reset();
-    status.classList.add("success");
-    status.innerHTML = "Bedankt, uw bericht is met succes verzonden!";
-    Recaptcha.reload();
+    status.classList.add('success');
+    status.innerHTML = 'Bedankt, uw bericht is met succes verzonden!';
   }
 
   function error() {
-    status.classList.add("error");
-    status.innerHTML = "Ooops! Er is iets misgegaan. Probeer het bericht opnieuw te versturen of neem telefonisch contact met ons op.";
-    Recaptcha.reload();
+    status.classList.add('error');
+    status.innerHTML = 'Ooops! Er is iets misgegaan. Probeer het bericht opnieuw te versturen of neem telefonisch contact met ons op.';
   }
 
   // handle the form submission event
-
-  form.addEventListener("submit", function (ev) {
+  form.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var data = new FormData(form);
     ajax(form.method, form.action, data, success, error);
@@ -240,11 +213,10 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 // helper function for sending an AJAX request
-
 function ajax(method, url, data, success, error) {
   var xhr = new XMLHttpRequest();
   xhr.open(method, url);
-  xhr.setRequestHeader("Accept", "application/json");
+  xhr.setRequestHeader('Accept', 'application/json');
   xhr.onreadystatechange = function () {
     if (xhr.readyState !== XMLHttpRequest.DONE) return;
     if (xhr.status === 200) {
