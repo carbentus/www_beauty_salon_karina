@@ -712,9 +712,9 @@ button {
     margin: 0 auto;
     max-width: 1280px;
     padding: 72px 0;
-    -webkit-transition: all 1.2s ease-out;
-    -o-transition: all 1.2s ease-out;
-    transition: all 1.2s ease-out;
+    -webkit-transition: transform 1.2s ease-out;
+    -o-transition: transform 1.2s ease-out;
+    transition: transform 1.2s ease-out;
 }
 
 

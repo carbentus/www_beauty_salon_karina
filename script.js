@@ -56,16 +56,19 @@ window.addEventListener('resize', onResize);
 window.addEventListener('scroll', function () {
   const scrollValue = window.scrollY;
 
-  if (scrollValue > serviceWaxingFromTop + serviceWaxingHeight / 4 - windowHeight) {
+  if (!serviceWaxing.isActive && scrollValue > serviceWaxingFromTop + serviceWaxingHeight / 4 - windowHeight) {
     serviceWaxing.classList.add('active');
+    serviceWaxing.isActive = true;
   }
 
-  if (scrollValue > serviceFaceFromTop + serviceFaceHeight / 4 - windowHeight) {
+  if (!serviceFace.isActive && scrollValue > serviceFaceFromTop + serviceFaceHeight / 4 - windowHeight) {
     serviceFace.classList.add('active');
+    serviceFace.isActive = true;
   }
 
-  if (scrollValue > serviceManicureFromTop + serviceManicureHeight / 4 - windowHeight) {
+  if (!serviceManicure.isActive && scrollValue > serviceManicureFromTop + serviceManicureHeight / 4 - windowHeight) {
     serviceManicure.classList.add('active');
+    serviceManicure.isActive = true;
   }
 });
 
